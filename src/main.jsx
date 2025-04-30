@@ -4,12 +4,19 @@ import Menus from "./Menus";
 import Login from "./Login";
 import Cuadros from "./cuadros";
 import Locaciones from "./Locaciones";
+import Presentacion from "./Presentacion";
 import "./index.css";
 
 const App = () => {
   return (
     <div className="app-container">
       <Menus />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Presentacion />
+      <br />
       <br />
       <div className="main-container">
         <h1 className="titulo">Nuestros Servicios</h1>
