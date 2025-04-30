@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Menus from "./Menus";
 import Login from "./Login";
 import Cuadros from "./cuadros";
+import Locaciones from "./Locaciones";
 import "./index.css";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <div className="main-container">
         <h1 className="titulo">Nuestros Servicios</h1>
         <Cuadros />
+        <Locaciones />
       </div>
       <div className="content">
         <Login />
