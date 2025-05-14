@@ -1,16 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { enrutador } from "./enrutador.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./assets/Pages/Login";
+import Registro from "./assets/Pages/Registro";
+import Home from "./assets/Pages/Home";
+import RutaProtegida from "./assets/Componetes/RutaProtegida";
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        {enrutador.map((ruta, i) => (
-          <Route key={i} path={ruta.path} element={ruta.element} />
-        ))}
+        <Route path="/" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+        {/* Ruta protegida: Solo entra si está autenticado */}
+        <Route
+          path="/home"
+          element={
+            <RutaProtegida>
+              <Home />
+            </RutaProtegida>
+          }
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
-
-export default App;

@@ -1,12 +1,9 @@
-import React from "react";
+import { Navigate } from "react-router-dom";
 
-const RutaProtegida = ({ proteger }) => {
-  return (
-    <div>
-      {/* Aquí va la lógica de la ruta protegida */}
-      {proteger}
-    </div>
-  );
+const RutaProtegida = ({ children }) => {
+  const usuarioAutenticado = localStorage.getItem("auth") === "true";
+
+  return usuarioAutenticado ? children : <Navigate to="/" />;
 };
 
 export default RutaProtegida;

@@ -1,57 +1,58 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/Login.css";
-import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-
-    if (email === "usuario@correo.com" && password === "Contraseña segura") {
+    if (email && password) {
+      localStorage.setItem("auth", "true");
       navigate("/home");
-    } else {
-      alert("Correo o contraseña incorrectos.");
     }
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form-container">
-        <h2>Casa de Eventos Gerizim</h2>
-        <p className="slogan">Tu momento, tu evento, nuestro compromiso</p>
-        <form className="login-form" onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label>Correo electrónico</label>
-            <input
-              type="email"
-              placeholder="usuario@correo.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-
-          <div className="input-group">
-            <label>Contraseña</label>
-            <input
-              type="password"
-              placeholder="Contraseña segura"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <button type="submit">Iniciar Sesión</button>
-
-          <p className="register-link">
-            ¿No tienes cuenta? <Link to="/registro">Regístrate aquí</Link>
+    <div className="auth-container">
+      <div className="auth-left">
+        <div className="overlay">
+          <h2>¡Bienvenido a Gerizim!</h2>
+          <p>
+            Una casa de eventos familiar donde tus momentos se convierten en
+            recuerdos inolvidables.
           </p>
+          <p>
+            Queremos ser los mejores de Colombia y ser reconocidos en el mundo
+            por hacer de cada celebración algo único.
+          </p>
+        </div>
+      </div>
+      <div class="auth-right">
+        <h1>Inicia sesión</h1>
+        <form onSubmit={handleLogin} className="auth-form">
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Entrar</button>
         </form>
+        <p>
+          ¿No tienes cuenta? <Link to="/registro">Regístrate</Link>
+        </p>
       </div>
     </div>
   );
 }
-
-export default Login;

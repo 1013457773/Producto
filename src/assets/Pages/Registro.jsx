@@ -1,66 +1,80 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import "../styles/Registro.css";
 
-const Registro = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+export default function Registro() {
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleRegistro = (e) => {
     e.preventDefault();
-    // Lógica para enviar los datos del formulario
-    console.log("Registro exitoso", formData);
+    if (nombre && apellido && email && password) {
+      localStorage.setItem(
+        "usuario",
+        JSON.stringify({ nombre, apellido, email, password })
+      );
+      navigate("/");
+    }
   };
 
   return (
-    <div>
-      <h2>Registro</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Nombre de usuario:</label>
+    <div className="auth-container">
+      <div className="auth-left">
+        <div className="overlay">
+          <h2>Gerizim: Donde la magia de tus momentos comienza</h2>
+          <p>
+            Somos una casa de eventos familiar con el corazón puesto en cada
+            detalle.
+          </p>
+          <p>
+            Nuestra meta: ser los mejores de Colombia y conquistar el mundo con
+            celebraciones inolvidables.
+          </p>
+        </div>
+      </div>
+      <div className="auth-right">
+        <h1>Regístrate</h1>
+        <form onSubmit={handleRegistro} className="auth-form">
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
+            placeholder="Nombre"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="email">Correo electrónico:</label>
+          <input
+            type="text"
+            placeholder="Apellido"
+            value={apellido}
+            onChange={(e) => setApellido(e.target.value)}
+            required
+          />
           <input
             type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            placeholder="Correo electrónico"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="password">Contraseña:</label>
           <input
             type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </div>
-        <button type="submit">Registrar</button>
-      </form>
+          <label className="checkbox-label">
+            <input type="checkbox" required /> Acepto términos y condiciones
+          </label>
+          <button type="submit">Registrarse</button>
+        </form>
+        <p>
+          ¿Ya tienes cuenta? <Link to="/">Inicia sesión</Link>
+        </p>
+      </div>
     </div>
   );
-};
-
-export default Registro;
+}

@@ -1,4 +1,3 @@
-import { createElement } from "react";
 import Home from "./assets/Pages/Home";
 import Login from "./assets/Pages/Login";
 import Registro from "./assets/Pages/Registro";
@@ -7,14 +6,18 @@ import RutaProtegida from "./assets/Componetes/RutaProtegida.jsx";
 export const enrutador = [
   {
     path: "/home",
-    element: createElement(RutaProtegida, { proteger: createElement(Home) }),
+    element: <RutaProtegida proteger={<Home />} />,
   },
   {
-    path: "/",
-    element: createElement(Login),
+    path: "/login", // ✅ agrega esta ruta para evitar errores
+    element: <Login />,
   },
   {
     path: "/registro",
-    element: createElement(Registro),
+    element: <Registro />,
+  },
+  {
+    path: "/", // redirige a login si es la raíz
+    element: <Login />,
   },
 ];

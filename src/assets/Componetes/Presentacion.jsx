@@ -1,5 +1,5 @@
 import React from "react";
-import "./Presentacion.css";
+import "../styles/Presentacion.css";
 
 const Presentacion = () => {
   return (

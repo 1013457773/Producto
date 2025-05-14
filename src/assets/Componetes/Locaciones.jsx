@@ -1,8 +1,8 @@
 import React, { useState } from "react"; //
-import "./Locaciones.css";
-import img1 from "./assets/casa1.jpg";
-import img2 from "./assets/casa2.jpg";
-import img3 from "./assets/casa3.jpg";
+import "../styles/Locaciones.css";
+import img1 from "../imagenes/casa1.jpg";
+import img2 from "../imagenes/casa2.jpg";
+import img3 from "../imagenes/casa3.jpg";
 
 const locaciones = [
   {

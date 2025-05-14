@@ -54,3 +54,28 @@
   background-color: #f2d194;
   color: #8c0303;
 }
+
+/* Estilos para el botón Cerrar sesión */
+.logout-button {
+  background-color: #f2d194; /* Color de fondo armonizado con el menú */
+  color: #8c0303; /* Color que combina con el esquema de colores */
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+  margin-left: 25px;
+}
+
+.logout-button:hover {
+  background-color: #8c0303; /* Al pasar el ratón, cambio a un tono más oscuro */
+  color: #f2d194; /* El texto cambia de color para resaltar */
+}
+
+.logout-button:focus {
+  outline: none; /* Eliminar el borde por defecto cuando el botón está enfocado */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añadir sombra sutil para mejor enfoque */
+}

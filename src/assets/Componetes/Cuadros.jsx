@@ -1,13 +1,13 @@
 import React from "react";
-import "./Cuadros.css";
-import fiesta from "./assets/Opera Instantánea_2025-03-19_195313_www.instagram.com.png";
-import cumple from "./assets/Opera Instantánea_2025-04-29_204206_www.instagram.com.png";
-import años from "./assets/Opera Instantánea_2025-03-19_195413_www.instagram.com.png";
-import matrimonio from "./assets/Opera Instantánea_2025-03-19_195208_www.instagram.com.png";
-import primeras from "./assets/Opera Instantánea_2025-04-29_205038_www.instagram.com.png";
-import grados from "./assets/Opera Instantánea_2025-04-29_205617_www.instagram.com.png";
-import bautizos from "./assets/Opera Instantánea_2025-04-29_205755_www.instagram.com.png";
-import eventos from "./assets/Opera Instantánea_2025-03-19_195536_www.instagram.com.png";
+import "../styles/Cuadros.css";
+import fiesta from "../imagenes/Opera Instantánea_2025-03-19_195313_www.instagram.com.png";
+import cumple from "../imagenes/Opera Instantánea_2025-04-29_204206_www.instagram.com.png";
+import años from "../imagenes/Opera Instantánea_2025-03-19_195413_www.instagram.com.png";
+import matrimonio from "../imagenes/Opera Instantánea_2025-03-19_195208_www.instagram.com.png";
+import primeras from "../imagenes/Opera Instantánea_2025-04-29_205038_www.instagram.com.png";
+import grados from "../imagenes/Opera Instantánea_2025-04-29_205617_www.instagram.com.png";
+import bautizos from "../imagenes/Opera Instantánea_2025-04-29_205755_www.instagram.com.png";
+import eventos from "../imagenes/Opera Instantánea_2025-03-19_195536_www.instagram.com.png";
 
 const listaEventos = [
   {
