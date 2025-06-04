@@ -1,4 +1,4 @@
-import React, { useState } from "react"; //
+import React, { useState } from "react";
 import "../styles/Locaciones.css";
 import img1 from "../imagenes/casa1.jpg";
 import img2 from "../imagenes/casa2.jpg";
@@ -58,29 +58,33 @@ const Locaciones = () => {
           ❮
         </button>
 
-        <div className="locacion-card">
-          <img src={actual.imagen} alt={actual.titulo} />
-          <h3>{actual.titulo}</h3>
-          <p>{actual.descripcion}</p>
-
-          <p>
-            <strong>Valoración:</strong> ⭐ {actual.valoracion} / 5.0 (
-            {actual.opiniones} opiniones)
-          </p>
-          <p>
-            <strong>Ubicación:</strong> {actual.ciudad}
-          </p>
-          <p>
-            <strong>Menús desde:</strong> {actual.menuDesde}
-          </p>
-          <p>
-            <strong>Capacidad:</strong> {actual.capacidad}
-          </p>
-          <p>
-            <em>{actual.popularidad}</em>
-          </p>
-
-          <button className="consultar-btn">Consultar más</button>
+        <div className="locacion-card-horizontal">
+          <img
+            src={actual.imagen}
+            alt={actual.titulo}
+            className="locacion-img"
+          />
+          <div className="locacion-info">
+            <h3>{actual.titulo}</h3>
+            <p>{actual.descripcion}</p>
+            <p>
+              <strong>Valoración:</strong> ⭐ {actual.valoracion} / 5.0 (
+              {actual.opiniones} opiniones)
+            </p>
+            <p>
+              <strong>Ubicación:</strong> {actual.ciudad}
+            </p>
+            <p>
+              <strong>Menús desde:</strong> {actual.menuDesde}
+            </p>
+            <p>
+              <strong>Capacidad:</strong> {actual.capacidad}
+            </p>
+            <p>
+              <em>{actual.popularidad}</em>
+            </p>
+            <button className="consultar-btn">Consultar más</button>
+          </div>
         </div>
 
         <button className="nav-btn" onClick={siguiente}>

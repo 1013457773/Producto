@@ -126,7 +126,7 @@ const Cuadros = () => {
       ) : (
         <div className="detalle-evento">
           <button className="cuadro-boton" onClick={volver}>
-            Volver
+            Volver a la lista
           </button>
           <br />
           <br />

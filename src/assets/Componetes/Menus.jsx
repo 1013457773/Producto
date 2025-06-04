@@ -16,7 +16,7 @@ const Menu = () => {
         <h1 className="menu-title">Eventos Gerizim</h1>
         <ul className="menu-links">
           <li>
-            <a href="#">Inicio</a>
+            <a href="../home">Inicio</a>
           </li>
           <li>
             <a href="#">Servicios</a>

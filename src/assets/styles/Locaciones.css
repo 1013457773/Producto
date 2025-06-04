@@ -1,109 +1,109 @@
 :root {
-  --rosa-suave: #fa755e; /* Rosa suave */
-  --beige-claro: #f5ebdd; /* Beige claro */
-  --verde-salvia: #a8b5a2; /* Verde salvia */
-  --gris-perla: #d3d3d3; /* Gris perla */
-  --blanco-hueso: #faf9f6; /* Blanco hueso */
-  --texto-principal: #3a3a3a; /* Texto principal */
-  --lavanda-suave: #b9a0d7; /* Lavanda suave */
-  --coral-palido: #f4a7b9; /* Coral pálido */
-  --verde-menta: #a8d8d8; /* Verde menta */
-  --dorado-suave: #d1b68d; /* Dorado suave */
+  --verde-salvia: #6a994e;
+  --verde-claro: #a7c957;
+  --beige-claro: #f2e8cf;
+  --beige-medio: #e9edc9;
+  --beige-oscuro: #ccd5ae;
+  --texto-principal: #333;
 }
 
-/* Contenedor principal */
 .locaciones-container {
-  padding: 40px;
-  background: linear-gradient(
-    to right,
-    var(--beige-claro),
-    var(--blanco-hueso)
-  );
+  padding: 40px 20px;
+  background-color: var(--beige-claro);
   text-align: center;
 }
 
-/* Título principal */
 .locaciones-titulo {
-  font-size: 32px;
-  color: var(--rosa-suave);
-  font-weight: 600;
-  margin-bottom: 30px;
-  font-family: "Georgia", serif;
+  font-size: 36px;
+  color: var(--verde-salvia);
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* Carrusel */
+/* Carrusel general */
 .carrusel {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Tarjeta */
-.locacion-card {
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  width: 320px;
-  padding: 24px;
-  transition: transform 0.3s ease;
-}
-
-.locacion-card:hover {
-  transform: scale(1.03);
-}
-
-/* Imagen */
-.locacion-card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Título de cada finca */
-.locacion-card h3 {
-  margin-top: 14px;
-  font-size: 20px;
-  color: var(--verde-salvia);
-  font-weight: bold;
-}
-
-/* Descripción */
-.locacion-card p {
-  color: var(--texto-principal);
-  font-size: 14.5px;
-  margin: 10px 0;
-  line-height: 1.5;
-}
-
-/* Botón */
-.consultar-btn {
-  background-color: var(--rosa-suave);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.consultar-btn:hover {
-  background-color: var(--coral-palido); /* Cambio de color en hover */
+  gap: 20px;
 }
 
 /* Botones de navegación */
 .nav-btn {
-  font-size: 26px;
-  background: none;
+  background-color: var(--verde-salvia);
+  color: white;
   border: none;
-  color: var(--verde-salvia);
+  font-size: 28px;
+  padding: 10px 16px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .nav-btn:hover {
-  color: var(--rosa-suave);
+  background-color: var(--verde-claro);
+}
+
+/* Tarjeta horizontal con imagen al lado */
+.locacion-card-horizontal {
+  display: flex;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.locacion-card-horizontal:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen a la izquierda */
+.locacion-img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Información a la derecha */
+.locacion-info {
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.locacion-info h3 {
+  font-size: 24px;
+  color: var(--verde-salvia);
+  margin-bottom: 8px;
+}
+
+.locacion-info p {
+  color: var(--texto-principal);
+  font-size: 15px;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.consultar-btn {
+  background-color: var(--verde-claro);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.consultar-btn:hover {
+  background-color: var(--verde-salvia);
 }
