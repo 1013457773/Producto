@@ -1,16 +1,17 @@
-import React from "react";
-import { Link, Routes, Route, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import "../styles/Cuadros.css";
 
-import Cumpleaños from "../Eventos/Cumpleaños.jsx";
-import Matrimonios from "../Eventos/Matrimonios.jsx";
-import Quince from "../Eventos/Quince.jsx";
-import Fiestas from "../Eventos/Fiestas.jsx";
-import Comuniones from "../Eventos/Comuniones.jsx";
-import Grados from "../Eventos/Grados.jsx";
-import Bautizos from "../Eventos/Bautizos.jsx";
-import Personalizados from "../Eventos/Personalizados.jsx";
+// Importa todos los componentes de eventos
+import Cumpleaños from "../Eventos/Cumpleaños";
+import Matrimonios from "../Eventos/Matrimonios";
+import Quince from "../Eventos/Quince";
+import Fiestas from "../Eventos/Fiestas";
+import Comuniones from "../Eventos/Comuniones";
+import Grados from "../Eventos/Grados";
+import Bautizos from "../Eventos/Bautizos";
+import Personalizados from "../Eventos/Personalizados";
 
+// Imágenes
 import fiesta from "../imagenes/Opera Instantánea_2025-03-19_195313_www.instagram.com.png";
 import cumple from "../imagenes/Opera Instantánea_2025-04-29_204206_www.instagram.com.png";
 import años from "../imagenes/Opera Instantánea_2025-03-19_195413_www.instagram.com.png";
@@ -20,84 +21,84 @@ import grados from "../imagenes/Opera Instantánea_2025-04-29_205617_www.instagr
 import bautizos from "../imagenes/Opera Instantánea_2025-04-29_205755_www.instagram.com.png";
 import eventos from "../imagenes/Opera Instantánea_2025-03-19_195536_www.instagram.com.png";
 
+// Lista de eventos
 const listaEventos = [
   {
     titulo: "Fiestas Empresariales",
     descripcion:
       "Reuniones, integraciones o cenas de fin de año con todo incluido.",
     imagen: fiesta,
-    link: "fiestas",
+    componente: "Fiestas",
   },
   {
     titulo: "Cumpleaños Inolvidables",
     descripcion:
       "Decoración temática, música y menú especial para todas las edades.",
     imagen: cumple,
-    link: "cumpleaños",
+    componente: "Cumpleaños",
   },
   {
     titulo: "Quince Años",
     descripcion:
       "Una noche mágica con entrada especial, pista de baile y catering premium.",
     imagen: años,
-    link: "quince",
+    componente: "Quince",
   },
   {
     titulo: "Matrimonios",
     descripcion:
       "Planeamos la boda de tus sueños desde la ceremonia hasta la fiesta.",
     imagen: matrimonio,
-    link: "matrimonios",
+    componente: "Matrimonios",
   },
   {
     titulo: "Primeras Comuniones",
     descripcion: "Ambiente familiar, decoración religiosa y menú infantil.",
     imagen: primeras,
-    link: "comuniones",
+    componente: "Comuniones",
   },
   {
     titulo: "Grados",
     descripcion:
       "Celebra tus logros con estilo y un excelente servicio de catering.",
     imagen: grados,
-    link: "grados",
+    componente: "Grados",
   },
   {
     titulo: "Bautizos",
     descripcion:
       "Ambiente íntimo, decoración clásica y atención personalizada.",
     imagen: bautizos,
-    link: "bautizos",
+    componente: "Bautizos",
   },
   {
     titulo: "Eventos Personalizados",
     descripcion: "Cuéntanos tu idea y la hacemos realidad. ¡Sin límites!",
     imagen: eventos,
-    link: "personalizados",
+    componente: "Personalizados",
   },
 ];
 
-// Objeto que mapea las rutas con los componentes específicos
-const componentesEventos = {
-  fiestas: Fiestas,
-  cumpleaños: Cumpleaños,
-  quince: Quince,
-  matrimonios: Matrimonios,
-  comuniones: Comuniones,
-  grados: Grados,
-  bautizos: Bautizos,
-  personalizados: Personalizados,
+// Mapa para renderizar el componente correcto
+const componentes = {
+  Fiestas: <Fiestas />,
+  Cumpleaños: <Cumpleaños />,
+  Quince: <Quince />,
+  Matrimonios: <Matrimonios />,
+  Comuniones: <Comuniones />,
+  Grados: <Grados />,
+  Bautizos: <Bautizos />,
+  Personalizados: <Personalizados />,
 };
 
 const Cuadros = () => {
-  const location = useLocation();
-  const estaViendoDetalle = listaEventos.some((e) =>
-    location.pathname.endsWith(e.link)
-  );
+  const [eventoSeleccionado, setEventoSeleccionado] = useState(null);
+
+  const volver = () => setEventoSeleccionado(null);
 
   return (
     <div className="main-container">
-      {!estaViendoDetalle && (
+      {!eventoSeleccionado ? (
         <>
           <h2 className="titulo">Tipos de eventos que realizamos</h2>
           <div className="cuadros-container">
@@ -111,29 +112,27 @@ const Cuadros = () => {
                 <div className="cuadro-contenido">
                   <h3 className="cuadro-titulo">{evento.titulo}</h3>
                   <p className="cuadro-descripcion">{evento.descripcion}</p>
-                  <Link to={evento.link} className="cuadro-boton">
+                  <button
+                    className="cuadro-boton"
+                    onClick={() => setEventoSeleccionado(evento.componente)}
+                  >
                     Más información
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         </>
+      ) : (
+        <div className="detalle-evento">
+          <button className="cuadro-boton" onClick={volver}>
+            Volver
+          </button>
+          <br />
+          <br />
+          {componentes[eventoSeleccionado]}
+        </div>
       )}
-
-      {/* Rutas internas con componentes específicos */}
-      <Routes>
-        {listaEventos.map((evento) => {
-          const Componente = componentesEventos[evento.link];
-          return (
-            <Route
-              key={evento.link}
-              path={evento.link}
-              element={<Componente />}
-            />
-          );
-        })}
-      </Routes>
     </div>
   );
 };
