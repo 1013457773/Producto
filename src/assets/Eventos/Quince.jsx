@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../Eventos/cssEventos/Fiestas.css";
-
 const images = [
   "https://source.unsplash.com/1200x800/?quinceanera,party",
   "https://source.unsplash.com/1200x800/?dance,celebration",
