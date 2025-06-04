@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
 const images = [
@@ -8,25 +8,37 @@ const images = [
   "https://source.unsplash.com/1200x800/?event,people",
 ];
 
-const Card = ({ title, description, img }) => (
+const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
     <img src={img} alt={title} />
     <div className="card-content">
       <h3>{title}</h3>
       <p>{description}</p>
+      <p>
+        <strong>Capacidad:</strong> {capacity} personas
+      </p>
+      <p>
+        <strong>Precio:</strong> {price}
+      </p>
     </div>
   </div>
 );
 
 const FiestasEmpresariales = () => {
+  // Estado para el tema (azul o fucsia)
+  const [theme, setTheme] = useState("theme-azul");
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "theme-azul" ? "theme-fucsia" : "theme-azul"));
+  };
+
   return (
-    <div className="fiestas-page">
+    <div className={`fiestas-page ${theme}`}>
       <header className="hero">
         <h1>Fiestas Empresariales Gerizim</h1>
         <p>
           Transformamos tus eventos corporativos en experiencias inolvidables
         </p>
-        <button className="btn-primary">Cotiza tu evento</button>
       </header>
 
       <section className="image-gallery">
@@ -37,19 +49,25 @@ const FiestasEmpresariales = () => {
 
       <section className="cards-section">
         <Card
-          title="Planificación Profesional"
-          description="Nos encargamos de todo el proceso para que tú solo disfrutes."
-          img="https://source.unsplash.com/600x400/?planning,event"
+          title="Paquete Esencial"
+          description="Una opción accesible con todos los servicios básicos para celebrar con estilo."
+          capacity="100 a 200"
+          price="$3,500,000 COP"
+          img="https://source.unsplash.com/600x400/?small,corporate-party"
         />
         <Card
-          title="Ambientes Exclusivos"
-          description="Espacios elegantes para causar una gran impresión."
-          img="https://source.unsplash.com/600x400/?luxury,venue"
+          title="Paquete Ejecutivo"
+          description="Comodidad y elegancia en espacios selectos con catering premium y ambientación corporativa."
+          capacity="200 a 400"
+          price="$6,800,000 COP"
+          img="https://source.unsplash.com/600x400/?medium,event,corporate"
         />
         <Card
-          title="Catering Premium"
-          description="Menús personalizados y de alta calidad para cada ocasión."
-          img="https://source.unsplash.com/600x400/?catering,food"
+          title="Paquete Elite Corporativo"
+          description="La experiencia más exclusiva para grandes celebraciones empresariales con todos los lujos."
+          capacity="400 a 600+"
+          price="$11,500,000 COP"
+          img="https://source.unsplash.com/600x400/?luxury,business,event"
         />
       </section>
 

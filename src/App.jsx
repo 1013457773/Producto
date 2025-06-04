@@ -3,6 +3,7 @@ import Login from "./assets/Pages/Login";
 import Registro from "./assets/Pages/Registro";
 import Home from "./assets/Pages/Home";
 import RutaProtegida from "./assets/Componetes/RutaProtegida";
+import Fiestas from "./assets/Eventos/Fiestas";
 
 export default function App() {
   return (
@@ -18,6 +19,11 @@ export default function App() {
               <Home />
             </RutaProtegida>
           }
+        />
+        <Route path="/fiestas-azul" element={<Fiestas tema="theme-azul" />} />
+        <Route
+          path="/fiestas-fucsia"
+          element={<Fiestas tema="theme-fucsia" />}
         />
       </Routes>
     </Router>
