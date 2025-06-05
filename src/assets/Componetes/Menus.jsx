@@ -1,13 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate para redirigir
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/Menus.css";
 
 const Menu = () => {
-  const navigate = useNavigate(); // Usamos navigate para redirigir al login
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("auth"); // Eliminar el item de sesión
-    navigate("/"); // Redirigir al login
+    localStorage.removeItem("auth");
+    navigate("/");
   };
 
   return (
@@ -16,16 +16,16 @@ const Menu = () => {
         <h1 className="menu-title">Eventos Gerizim</h1>
         <ul className="menu-links">
           <li>
-            <a href="../home">Inicio</a>
+            <Link to="/home">Inicio</Link>
           </li>
           <li>
-            <a href="#">Servicios</a>
+            <Link to="/servicios">Extras</Link>
           </li>
           <li>
-            <a href="#">Galería</a>
+            <Link to="/eventos">Eventos</Link>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <Link to="/contacto">Contacto</Link>
           </li>
         </ul>
         <button onClick={handleLogout} className="logout-button">
