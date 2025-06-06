@@ -1,13 +1,14 @@
+// src/assets/Componetes/Menus.jsx
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "../styles/Menus.css";
+import "../styles/Menus.css"; 
 
 const Menu = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
-    navigate("/");
+    navigate("/"); // vuelve al login
   };
 
   return (
@@ -22,7 +23,7 @@ const Menu = () => {
             <Link to="/servicios">Extras</Link>
           </li>
           <li>
-            <Link to="/eventos">Eventos</Link>
+            <Link to="/Pagos">Pagos</Link>
           </li>
           <li>
             <Link to="/contacto">Contacto</Link>

@@ -9,7 +9,7 @@ export const enrutador = [
     element: <RutaProtegida proteger={<Home />} />,
   },
   {
-    path: "/login", // ✅ agrega esta ruta para evitar errores
+    path: "/login", 
     element: <Login />,
   },
   {

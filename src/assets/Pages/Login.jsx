@@ -30,7 +30,7 @@ export default function Login() {
           </p>
         </div>
       </div>
-      <div class="auth-right">
+      <div className="auth-right">
         <h1>Inicia sesión</h1>
         <form onSubmit={handleLogin} className="auth-form">
           <input

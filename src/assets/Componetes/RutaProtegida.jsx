@@ -1,9 +1,7 @@
+// src/Componetes/RutaProtegida.jsx
 import { Navigate } from "react-router-dom";
 
-const RutaProtegida = ({ children }) => {
-  const usuarioAutenticado = localStorage.getItem("auth") === "true";
-
-  return usuarioAutenticado ? children : <Navigate to="/" />;
-};
-
-export default RutaProtegida;
+export default function RutaProtegida({ children }) {
+  const auth = localStorage.getItem("auth");
+  return auth ? children : <Navigate to="/" />;
+}

@@ -1,29 +1,26 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Registro from "../Pages/Registro";
 import Menu from "./Menus";
-
-// Nuevas páginas
-import Servicios from "../servicios/Extras"; // Puedes cambiar el nombre del archivo si quieres
-import Contacto from "../Pages/Contacto"; // Crea esta página si no existe
-import Eventos from "../Pages/Eventos"; // Página general de eventos
+import Extras from "../servicios/Extras.jsx";
+import Contacto from "../servicios/Contacto.jsx";
+import Pagos from "../servicios/Pagos.jsx";
 
 export default function EnrutadorInterno() {
   return (
-    <BrowserRouter>
+    <Router>
       <Menu />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
-
-        {/* Nuevas rutas */}
-        <Route path="/servicios" element={<Servicios />} />
+        <Route path="/servicios" element={<Extras />} />
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="/eventos" element={<Eventos />} />
+        <Route path="/Pagos" element={<Pagos />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
