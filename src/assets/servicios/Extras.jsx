@@ -6,7 +6,7 @@ import imgArepas from "../imagenes/casa1.jpg";
 
 import "../Eventos/cssEventos/ServiciosExtras.css";
 import Menu from "../Componetes/Menus.jsx";
-import { FaLeaf, FaBirthdayCake, FaUtensils, FaHotdog } from "react-icons/fa";
+import { FaLeaf, FaBirthdayCake, FaUtensils } from "react-icons/fa";
 
 export default function Eventos() {
   const servicios = [
@@ -50,7 +50,7 @@ export default function Eventos() {
     {
       id: "arepas",
       nombre: "Arepas Rellenas",
-      icono: <FaHotdog />,
+      icono: <FaUtensils />,
       descripcion: "Arepas con rellenos variados, listas para disfrutar.",
       beneficios: [
         "Ingredientes locales",
