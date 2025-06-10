@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { registrarUsuario } from "../../Api";
 import "../styles/Registro.css";
+import Swal from "sweetalert2";
 
 export default function Registro() {
   const [nombre, setNombre] = useState("");
@@ -9,14 +11,15 @@ export default function Registro() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleRegistro = (e) => {
+  const handleRegistro = async (e) => {
     e.preventDefault();
-    if (nombre && apellido && email && password) {
-      localStorage.setItem(
-        "usuario",
-        JSON.stringify({ nombre, apellido, email, password })
-      );
+
+    try {
+      await registrarUsuario({ nombre, apellido, email, password });
+      Swal.fire("¡Registro exitoso!", "Puedes iniciar sesión ahora", "success");
       navigate("/");
+    } catch (error) {
+      Swal.fire("Error", error.message, "error");
     }
   };
 
@@ -25,14 +28,7 @@ export default function Registro() {
       <div className="auth-left">
         <div className="overlay">
           <h2>Gerizim: Donde la magia de tus momentos comienza</h2>
-          <p>
-            Somos una casa de eventos familiar con el corazón puesto en cada
-            detalle.
-          </p>
-          <p>
-            Nuestra meta: ser los mejores de Colombia y conquistar el mundo con
-            celebraciones inolvidables.
-          </p>
+          <p>Eventos con alma y detalle.</p>
         </div>
       </div>
       <div className="auth-right">

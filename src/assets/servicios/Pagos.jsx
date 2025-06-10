@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/pagos.css";
 import Menu from "../Componetes/Menus.jsx";
+import { crearPago } from "../../Api";
+import Swal from "sweetalert2";
 
 export default function Pagos() {
   const [formulario, setFormulario] = useState({
@@ -8,7 +10,7 @@ export default function Pagos() {
     correo: "",
     evento: "",
     fecha: "",
-    monto: ""
+    monto: "",
   });
 
   const handleChange = (e) => {
@@ -16,28 +18,44 @@ export default function Pagos() {
     setFormulario({ ...formulario, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Pago registrado para ${formulario.nombre}. ¡Gracias por tu compra!`);
-    console.log("Datos enviados:", formulario);
 
-    // Reiniciar formulario
-    setFormulario({
-      nombre: "",
-      correo: "",
-      evento: "",
-      fecha: "",
-      monto: ""
-    });
+    try {
+      await crearPago(formulario);
+
+      Swal.fire(
+        "¡Pago exitoso!",
+        `Registro guardado para ${formulario.nombre}`,
+        "success"
+      );
+
+      // Reiniciar formulario
+      setFormulario({
+        nombre: "",
+        correo: "",
+        evento: "",
+        fecha: "",
+        monto: "",
+      });
+    } catch (error) {
+      console.error("Error al guardar el pago:", error);
+      Swal.fire("Error", "No se pudo registrar el pago.", "error");
+    }
   };
 
   return (
     <div>
       <Menu />
-      <br /><br /><br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
       <section className="servicios-extras">
         <h2 className="titulo-principal">Formulario de Pago</h2>
-        <p className="descripcion">Completa los campos para pagar tu evento con nosotros.</p>
+        <p className="descripcion">
+          Completa los campos para pagar tu evento con nosotros.
+        </p>
 
         <form className="formulario-pago" onSubmit={handleSubmit}>
           <label>Nombre Completo:</label>
@@ -91,7 +109,9 @@ export default function Pagos() {
             required
           />
 
-          <button type="submit" className="boton-info">Realizar Pago</button>
+          <button type="submit" className="boton-info">
+            Realizar Pago
+          </button>
         </form>
       </section>
     </div>

@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { validarLogin } from "../../Api";
 import "../styles/Login.css";
+import Swal from "sweetalert2";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (email && password) {
+
+    try {
+      const usuario = await validarLogin(email, password);
       localStorage.setItem("auth", "true");
+      localStorage.setItem("usuario", JSON.stringify(usuario));
       navigate("/home");
+    } catch (error) {
+      Swal.fire("Error", error.message, "error");
     }
   };
 
@@ -20,14 +27,7 @@ export default function Login() {
       <div className="auth-left">
         <div className="overlay">
           <h2>¡Bienvenido a Gerizim!</h2>
-          <p>
-            Una casa de eventos familiar donde tus momentos se convierten en
-            recuerdos inolvidables.
-          </p>
-          <p>
-            Queremos ser los mejores de Colombia y ser reconocidos en el mundo
-            por hacer de cada celebración algo único.
-          </p>
+          <p>Donde cada evento se vuelve inolvidable.</p>
         </div>
       </div>
       <div className="auth-right">

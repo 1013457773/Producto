@@ -1,0 +1,12 @@
+{
+  "usuarios": [
+    {
+      "id": "1425",
+      "nombre": "jose",
+      "apellido": "luis",
+      "email": "jluisacosta270305@gmail.com",
+      "password": "4512"
+    }
+  ],
+  "pagos": []
+}
