@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
-const images = [
-  "https://source.unsplash.com/1200x800/?corporate,event",
-  "https://source.unsplash.com/1200x800/?business,party",
-  "https://source.unsplash.com/1200x800/?meeting,luxury",
-  "https://source.unsplash.com/1200x800/?event,people",
-];
+// Imágenes locales
+import empresarial1 from "../../assets/img/empresarial1.jpg";
+import empresarial2 from "../../assets/img/empresarial2.jpg";
+import empresarial3 from "../../assets/img/empresarial3.jpg";
+import empresarial4 from "../../assets/img/empresarial4.jpg";
+
+const images = [empresarial1, empresarial2, empresarial3, empresarial4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -25,7 +26,6 @@ const Card = ({ title, description, capacity, price, img }) => (
 );
 
 const FiestasEmpresariales = () => {
-  // Estado para el tema (azul o fucsia)
   const [theme, setTheme] = useState("theme-azul");
 
   const toggleTheme = () => {
@@ -53,21 +53,21 @@ const FiestasEmpresariales = () => {
           description="Una opción accesible con todos los servicios básicos para celebrar con estilo."
           capacity="100 a 200"
           price="$3,500,000 COP"
-          img="https://source.unsplash.com/600x400/?small,corporate-party"
+          img={empresarial1}
         />
         <Card
           title="Paquete Ejecutivo"
           description="Comodidad y elegancia en espacios selectos con catering premium y ambientación corporativa."
           capacity="200 a 400"
           price="$6,800,000 COP"
-          img="https://source.unsplash.com/600x400/?medium,event,corporate"
+          img={empresarial2}
         />
         <Card
           title="Paquete Elite Corporativo"
           description="La experiencia más exclusiva para grandes celebraciones empresariales con todos los lujos."
           capacity="400 a 600+"
           price="$11,500,000 COP"
-          img="https://source.unsplash.com/600x400/?luxury,business,event"
+          img={empresarial3}
         />
       </section>
 

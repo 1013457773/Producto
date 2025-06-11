@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
-const images = [
-  "https://source.unsplash.com/1200x800/?wedding,ceremony",
-  "https://source.unsplash.com/1200x800/?wedding,reception",
-  "https://source.unsplash.com/1200x800/?wedding,bride",
-  "https://source.unsplash.com/1200x800/?wedding,party",
-];
+// Importar imágenes locales
+import matrimonio1 from "../../assets/img/matrimonio1.jpg";
+import matrimonio2 from "../../assets/img/matrimonio2.jpg";
+import matrimonio3 from "../../assets/img/matrimonio3.jpg";
+import matrimonio4 from "../../assets/img/matrimonio4.jpg";
+
+const images = [matrimonio1, matrimonio2, matrimonio3, matrimonio4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -25,16 +26,8 @@ const Card = ({ title, description, capacity, price, img }) => (
 );
 
 const Matrimonios = () => {
-  const [theme, setTheme] = useState("theme-matrimonios");
-
-  const toggleTheme = () => {
-    setTheme((prev) =>
-      prev === "theme-matrimonios" ? "theme-nature" : "theme-matrimonios"
-    );
-  };
-
   return (
-    <div className={`fiestas-page ${theme}`}>
+    <div className="fiestas-page theme-matrimonios">
       <header className="hero">
         <h1>Matrimonios Gerizim</h1>
         <p>
@@ -54,21 +47,21 @@ const Matrimonios = () => {
           description="Una celebración acogedora para compartir con los más cercanos."
           capacity="50 a 100"
           price="$4,200,000 COP"
-          img="https://source.unsplash.com/600x400/?intimate,wedding"
+          img={matrimonio1}
         />
         <Card
           title="Boda Clásica"
           description="Ceremonia tradicional con todos los detalles cuidados y recepción elegante."
           capacity="100 a 200"
           price="$8,900,000 COP"
-          img="https://source.unsplash.com/600x400/?classic,wedding"
+          img={matrimonio2}
         />
         <Card
           title="Boda de Ensueño"
           description="La experiencia completa con ambientación de lujo, música en vivo y banquete inolvidable."
           capacity="200 a 400+"
           price="$14,500,000 COP"
-          img="https://source.unsplash.com/600x400/?luxury,wedding"
+          img={matrimonio3}
         />
       </section>
 

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
-const images = [
-  "https://source.unsplash.com/1200x800/?first,communion",
-  "https://source.unsplash.com/1200x800/?church,communion",
-  "https://source.unsplash.com/1200x800/?family,celebration",
-  "https://source.unsplash.com/1200x800/?kids,party",
-];
+// Importar imágenes locales
+import comunion1 from "../../assets/img/comunion1.jpg";
+import comunion2 from "../../assets/img//comunion2.jpg";
+import comunion3 from "../../assets/img/comunion3.jpg";
+import comunion4 from "../../assets/img/comunion4.jpg";
+
+const images = [comunion1, comunion2, comunion3, comunion4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -52,21 +53,21 @@ const PrimerasComuniones = () => {
           description="Evento íntimo para la familia más cercana con decoración básica y menú infantil."
           capacity="30 a 60"
           price="$2,800,000 COP"
-          img="https://source.unsplash.com/600x400/?communion,kids"
+          img={comunion1}
         />
         <Card
           title="Celebración Tradicional"
           description="Decoración religiosa completa, ceremonia especial y catering personalizado."
           capacity="60 a 150"
           price="$5,900,000 COP"
-          img="https://source.unsplash.com/600x400/?religious,event"
+          img={comunion2}
         />
         <Card
           title="Comunión Premium"
           description="Animación infantil, estaciones de comida y recuerdos personalizados para los invitados."
           capacity="150 a 300+"
           price="$9,700,000 COP"
-          img="https://source.unsplash.com/600x400/?party,kids,communion"
+          img={comunion3}
         />
       </section>
 

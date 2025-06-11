@@ -23,7 +23,7 @@ export default function Contacto() {
         </p>
         <div className="iconos-redes">
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/573132855243"
             target="_blank"
             rel="noopener noreferrer"
             className="icono whatsapp"

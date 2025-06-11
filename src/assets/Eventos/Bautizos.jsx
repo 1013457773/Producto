@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
-const images = [
-  "https://source.unsplash.com/1200x800/?baptism,church",
-  "https://source.unsplash.com/1200x800/?baptism,family",
-  "https://source.unsplash.com/1200x800/?baby,baptism",
-  "https://source.unsplash.com/1200x800/?baptism,celebration",
-];
+// Importar imágenes locales
+import bautizo1 from "../../assets/img/bautizo1.jpg";
+import bautizo2 from "../../assets/img/bautizo2.jpg";
+import bautizo3 from "../../assets/img/bautizo3.jpg";
+import bautizo4 from "../../assets/img/bautizo4.jpg";
+
+const images = [bautizo1, bautizo2, bautizo3, bautizo4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -52,21 +53,21 @@ const Bautizos = () => {
           description="Reunión familiar con decoración clásica y menú personalizado para todos."
           capacity="20 a 50"
           price="$3,000,000 COP"
-          img="https://source.unsplash.com/600x400/?baptism,family"
+          img={bautizo2}
         />
         <Card
           title="Bautizo Tradicional"
           description="Ambiente elegante con decoración clásica, ceremonia y catering especializado."
           capacity="50 a 120"
           price="$6,500,000 COP"
-          img="https://source.unsplash.com/600x400/?church,baptism"
+          img={bautizo3}
         />
         <Card
           title="Bautizo Premium"
           description="Decoración exclusiva, menú gourmet y atención personalizada para grandes grupos."
           capacity="120 a 250+"
           price="$11,000,000 COP"
-          img="https://source.unsplash.com/600x400/?party,baptism"
+          img={bautizo4}
         />
       </section>
 

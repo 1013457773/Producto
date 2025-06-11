@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
-const images = [
-  "https://source.unsplash.com/1200x800/?birthday,party",
-  "https://source.unsplash.com/1200x800/?birthday,cake",
-  "https://source.unsplash.com/1200x800/?birthday,decoration",
-  "https://source.unsplash.com/1200x800/?birthday,celebration",
-];
+// Imágenes locales
+import cumple1 from "../../assets/img/cumple1.jpg";
+import cumple2 from "../../assets/img/cumple2.jpg";
+import cumple3 from "../../assets/img/cumple3.jpg";
+import cumple4 from "../../assets/img/cumple4.jpg";
+
+const images = [cumple1, cumple2, cumple3, cumple4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -53,21 +54,21 @@ const CumpleanosInolvidables = () => {
           description="Ideal para celebraciones pequeñas pero llenas de magia. Incluye decoración temática, música infantil y menú básico."
           capacity="50 a 100"
           price="$2,200,000 COP"
-          img="https://source.unsplash.com/600x400/?kids,birthday,party"
+          img={cumple2}
         />
         <Card
           title="Paquete Familiar"
           description="Una opción intermedia con actividades, animación, menú variado y ambientación para todas las edades."
           capacity="100 a 200"
           price="$4,700,000 COP"
-          img="https://source.unsplash.com/600x400/?birthday,family,celebration"
+          img={cumple3}
         />
         <Card
           title="Paquete Fantasía Total"
           description="La experiencia más completa: show en vivo, buffet temático, música profesional, juegos y ambientación personalizada."
           capacity="200 a 400+"
           price="$8,900,000 COP"
-          img="https://source.unsplash.com/600x400/?luxury,birthday,decoration"
+          img={cumple4}
         />
       </section>
 
