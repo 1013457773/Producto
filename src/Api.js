@@ -44,7 +44,7 @@ export async function registrarUsuario(nuevoUsuario) {
 
 // ======================== PAGOS ========================
 
-// Obtener todos los pagos (para mostrarlos si lo deseas)
+// Obtener todos los pagos
 export async function obtenerPagos() {
   const res = await fetch(`${URL_API}/pagos`);
   if (!res.ok) throw new Error("Error al obtener pagos");
@@ -61,4 +61,26 @@ export async function crearPago(pago) {
 
   if (!res.ok) throw new Error("Error al crear el pago.");
   return res.json();
+}
+
+// Editar pago existente
+export async function editarPago(id, datosActualizados) {
+  const res = await fetch(`${URL_API}/pagos/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(datosActualizados),
+  });
+
+  if (!res.ok) throw new Error("Error al actualizar el pago");
+  return res.json();
+}
+
+// Eliminar pago
+export async function eliminarPago(id) {
+  const res = await fetch(`${URL_API}/pagos/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) throw new Error("Error al eliminar el pago");
+  return true;
 }

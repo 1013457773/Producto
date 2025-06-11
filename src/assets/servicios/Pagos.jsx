@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/pagos.css";
 import Menu from "../Componetes/Menus.jsx";
-import { crearPago } from "../../Api";
+import { crearPago, obtenerPagos, eliminarPago, editarPago } from "../../Api";
 import Swal from "sweetalert2";
 
 export default function Pagos() {
@@ -13,6 +13,18 @@ export default function Pagos() {
     monto: "",
   });
 
+  const [pagos, setPagos] = useState([]);
+  const [editando, setEditando] = useState(null);
+
+  useEffect(() => {
+    cargarPagos();
+  }, []);
+
+  const cargarPagos = async () => {
+    const data = await obtenerPagos();
+    setPagos(data);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormulario({ ...formulario, [name]: value });
@@ -22,15 +34,14 @@ export default function Pagos() {
     e.preventDefault();
 
     try {
-      await crearPago(formulario);
+      if (editando) {
+        await editarPago(editando, formulario);
+        Swal.fire("¡Actualizado!", "El pago fue modificado", "success");
+      } else {
+        await crearPago(formulario);
+        Swal.fire("¡Pago exitoso!", "Registro guardado", "success");
+      }
 
-      Swal.fire(
-        "¡Pago exitoso!",
-        `Registro guardado para ${formulario.nombre}`,
-        "success"
-      );
-
-      // Reiniciar formulario
       setFormulario({
         nombre: "",
         correo: "",
@@ -38,9 +49,38 @@ export default function Pagos() {
         fecha: "",
         monto: "",
       });
+      setEditando(null);
+      cargarPagos();
     } catch (error) {
-      console.error("Error al guardar el pago:", error);
-      Swal.fire("Error", "No se pudo registrar el pago.", "error");
+      console.error("Error:", error);
+      Swal.fire("Error", "Ocurrió un problema", "error");
+    }
+  };
+
+  const handleEditar = (pago) => {
+    setFormulario(pago);
+    setEditando(pago.id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleEliminar = async (id) => {
+    const confirm = await Swal.fire({
+      title: "¿Estás seguro?",
+      text: "No podrás revertir esto",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar",
+    });
+
+    if (confirm.isConfirmed) {
+      try {
+        await eliminarPago(id);
+        Swal.fire("Eliminado", "El pago fue borrado", "success");
+        cargarPagos();
+      } catch (error) {
+        console.error("Error:", error);
+        Swal.fire("Error", "No se pudo eliminar", "error");
+      }
     }
   };
 
@@ -50,13 +90,8 @@ export default function Pagos() {
       <br />
       <br />
       <br />
-      <br />
       <section className="servicios-extras">
         <h2 className="titulo-principal">Formulario de Pago</h2>
-        <p className="descripcion">
-          Completa los campos para pagar tu evento con nosotros.
-        </p>
-
         <form className="formulario-pago" onSubmit={handleSubmit}>
           <label>Nombre Completo:</label>
           <input
@@ -100,7 +135,7 @@ export default function Pagos() {
             required
           />
 
-          <label>Numero de tarjeta (COP):</label>
+          <label>Monto en COP:</label>
           <input
             type="number"
             name="monto"
@@ -109,10 +144,37 @@ export default function Pagos() {
             required
           />
 
-          <button type="submit" className="boton-info">
-            Realizar Pago
+          <button type="submit">
+            {editando ? "Actualizar Pago" : "Realizar Pago"}
           </button>
         </form>
+
+        <h2 className="titulo-principal">Pagos Registrados</h2>
+        <div className="tarjetas-pagos">
+          {pagos.map((pago) => (
+            <div className="tarjeta" key={pago.id}>
+              <h3>{pago.nombre}</h3>
+              <p>
+                <strong>Correo:</strong> {pago.correo}
+              </p>
+              <p>
+                <strong>Evento:</strong> {pago.evento}
+              </p>
+              <p>
+                <strong>Fecha:</strong> {pago.fecha}
+              </p>
+              <p>
+                <strong>Monto:</strong> ${pago.monto}
+              </p>
+              <div className="acciones">
+                <button onClick={() => handleEditar(pago)}>Editar</button>
+                <button onClick={() => handleEliminar(pago.id)}>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
