@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // 🔁 Importa useNavigate
+import { useNavigate } from "react-router-dom";
 import imgFlores from "../imagenes/Extras (1).jpg";
 import imgTortas from "../imagenes/Extras (4).jpg";
 import imgComidas from "../imagenes/Extras (3).jpg";
@@ -10,7 +10,7 @@ import Menu from "../Componetes/Menus.jsx";
 import { FaLeaf, FaBirthdayCake, FaUtensils } from "react-icons/fa";
 
 export default function Eventos() {
-  const navigate = useNavigate(); // ⚙️ Hook de navegación
+  const navigate = useNavigate();
 
   const servicios = [
     {

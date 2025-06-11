@@ -7,7 +7,6 @@ import Pagos from "./assets/servicios/Pagos";
 import Contacto from "./assets/servicios/Contacto";
 import Extras from "./assets/servicios/Extras";
 
-// Nuevas páginas detalladas
 import TiendaFlores from "./assets/ExtrasSERVER/TiendaFlores.jsx";
 import TiendaTortas from "./assets/ExtrasSERVER/TiendaTortas.jsx";
 import TiendaComidas from "./assets/ExtrasSERVER/TiendaComidas.jsx";
@@ -53,7 +52,6 @@ export default function App() {
           }
         />
 
-        {/* Rutas de servicios individuales */}
         <Route
           path="/flores"
           element={
