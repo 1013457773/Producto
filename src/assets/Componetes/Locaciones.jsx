@@ -83,10 +83,8 @@ const Locaciones = () => {
             <p>
               <em>{actual.popularidad}</em>
             </p>
-            <button className="consultar-btn">Consultar más</button>
           </div>
         </div>
-
         <button className="nav-btn" onClick={siguiente}>
           ❯
         </button>

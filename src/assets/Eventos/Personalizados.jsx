@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Eventos/cssEventos/Fiestas.css";
 
-const images = [
-  "https://source.unsplash.com/1200x800/?custom,event",
-  "https://source.unsplash.com/1200x800/?party,design",
-  "https://source.unsplash.com/1200x800/?celebration,theme",
-  "https://source.unsplash.com/1200x800/?creative,event",
-];
+// Imágenes locales
+import personalizado1 from "../../assets/img/personalizado1.jpg";
+import personalizado2 from "../../assets/img/personalizado2.jpg";
+import personalizado3 from "../../assets/img/personalizado3.jpg";
+import personalizado4 from "../../assets/img/personalizado4.jpg";
+
+const images = [personalizado1, personalizado2, personalizado3, personalizado4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -25,16 +26,8 @@ const Card = ({ title, description, capacity, price, img }) => (
 );
 
 const EventosPersonalizados = () => {
-  const [theme, setTheme] = useState("theme-personalizados");
-
-  const toggleTheme = () => {
-    setTheme((prev) =>
-      prev === "theme-personalizados" ? "theme-nature" : "theme-personalizados"
-    );
-  };
-
   return (
-    <div className={`fiestas-page ${theme}`}>
+    <div className="fiestas-page theme-personalizados">
       <header className="hero">
         <h1>Eventos Personalizados</h1>
         <p>Cuéntanos tu idea y la hacemos realidad. ¡Sin límites!</p>
@@ -52,21 +45,21 @@ const EventosPersonalizados = () => {
           description="Creamos tu evento desde cero según tus gustos, colores, temática y estilo."
           capacity="30 a 100"
           price="$4,500,000 COP"
-          img="https://source.unsplash.com/600x400/?design,celebration"
+          img={personalizado1}
         />
         <Card
           title="Evento Soñado"
           description="Convierte tu idea más loca en una experiencia real con decoración única."
           capacity="100 a 200"
           price="$7,800,000 COP"
-          img="https://source.unsplash.com/600x400/?custom,party"
+          img={personalizado2}
         />
         <Card
           title="Experiencia VIP"
           description="Escenografía exclusiva, menú gourmet y producción audiovisual profesional."
           capacity="200 a 500+"
           price="$13,900,000 COP"
-          img="https://source.unsplash.com/600x400/?event,light,show"
+          img={personalizado3}
         />
       </section>
 

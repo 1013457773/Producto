@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Eventos/cssEventos/Fiestas.css";
-const images = [
-  "https://source.unsplash.com/1200x800/?quinceanera,party",
-  "https://source.unsplash.com/1200x800/?dance,celebration",
-  "https://source.unsplash.com/1200x800/?birthday,gala",
-  "https://source.unsplash.com/1200x800/?event,ballroom",
-];
+
+// Imágenes locales
+import quince1 from "../../assets/img/quince1.jpg";
+import quince2 from "../../assets/img/quince2.jpg";
+import quince3 from "../../assets/img/quince3.jpg";
+import quince4 from "../../assets/img/quince4.jpg";
+
+const images = [quince1, quince2, quince3, quince4];
 
 const Card = ({ title, description, capacity, price, img }) => (
   <div className="card">
@@ -24,17 +26,8 @@ const Card = ({ title, description, capacity, price, img }) => (
 );
 
 const QuinceAnios = () => {
-  // Estado para el tema (vintage o azul)
-  const [theme, setTheme] = useState("theme-vintage");
-
-  const toggleTheme = () => {
-    setTheme((prev) =>
-      prev === "theme-vintage" ? "theme-azul" : "theme-vintage"
-    );
-  };
-
   return (
-    <div className={`fiestas-page ${theme}`}>
+    <div className="fiestas-page theme-vintage">
       <header className="hero">
         <h1>Quince Años Gerizim</h1>
         <p>
@@ -55,21 +48,21 @@ const QuinceAnios = () => {
           description="Celebración elegante con pista de baile, música en vivo y decoración temática."
           capacity="80 a 150"
           price="$4,200,000 COP"
-          img="https://source.unsplash.com/600x400/?quinceanera,dance"
+          img={quince1}
         />
         <Card
           title="Paquete Premium"
           description="Incluye DJ profesional, catering gourmet y fotografía para capturar cada momento."
           capacity="150 a 300"
           price="$7,800,000 COP"
-          img="https://source.unsplash.com/600x400/?party,gala"
+          img={quince2}
         />
         <Card
           title="Paquete Lujo"
           description="Experiencia exclusiva con salón VIP, show en vivo y servicios personalizados."
           capacity="300 a 500+"
           price="$13,200,000 COP"
-          img="https://source.unsplash.com/600x400/?luxury,event"
+          img={quince3}
         />
       </section>
 

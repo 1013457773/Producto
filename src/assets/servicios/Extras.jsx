@@ -1,14 +1,17 @@
 import React from "react";
-import imgFlores from "../imagenes/casa1.jpg";
-import imgTortas from "../imagenes/casa2.jpg";
-import imgComidas from "../imagenes/casa3.jpg";
-import imgArepas from "../imagenes/casa1.jpg";
+import { useNavigate } from "react-router-dom"; // 🔁 Importa useNavigate
+import imgFlores from "../imagenes/Extras (1).jpg";
+import imgTortas from "../imagenes/Extras (4).jpg";
+import imgComidas from "../imagenes/Extras (3).jpg";
+import imgArepas from "../imagenes/Extras (2).jpg";
 
 import "../Eventos/cssEventos/ServiciosExtras.css";
 import Menu from "../Componetes/Menus.jsx";
 import { FaLeaf, FaBirthdayCake, FaUtensils } from "react-icons/fa";
 
 export default function Eventos() {
+  const navigate = useNavigate(); // ⚙️ Hook de navegación
+
   const servicios = [
     {
       id: "flores",
@@ -86,7 +89,12 @@ export default function Eventos() {
                 alt={servicio.nombre}
                 className="evento-img"
               />
-              <button className="evento-boton">Más información</button>
+              <button
+                className="evento-boton"
+                onClick={() => navigate(`/${servicio.id}`)} // 🧭 Navegación
+              >
+                Más información
+              </button>
             </div>
           ))}
         </div>
