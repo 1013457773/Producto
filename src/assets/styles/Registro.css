@@ -1,0 +1,124 @@
+.auth-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #f2eeac;
+}
+
+.auth-left {
+  background-image: url("../imagenes/casa1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.auth-left .overlay {
+  background: linear-gradient(to top, rgba(140, 3, 28, 0.7), transparent);
+  height: 89.9vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #f2eeac;
+}
+
+.auth-left h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f2eeac;
+  margin-bottom: 1rem;
+}
+
+.auth-left p {
+  font-size: 1rem;
+  color: #d9d8d7;
+  margin-bottom: 0.5rem;
+}
+
+.auth-right {
+  background-color: #ffffff;
+  color: #26010f;
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-right h1 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #8c031c;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.auth-form input {
+  padding: 0.9rem 1rem;
+  border: 1px solid #a6a6a6;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  color: #26010f;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #f20544;
+  background-color: #fff4f6;
+}
+
+.auth-form button {
+  padding: 0.9rem;
+  background-color: #f2055c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 14px rgba(242, 5, 92, 0.2);
+}
+
+.auth-form button:hover {
+  background-color: #8c0327;
+}
+
+.auth-right p {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #72736e;
+}
+
+.auth-right a {
+  color: #591c3e;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.auth-right a:hover {
+  color: #f20544;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    padding: 3rem 2rem;
+  }
+}

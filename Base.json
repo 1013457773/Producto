@@ -1,0 +1,36 @@
+{
+  "usuarios": [
+    {
+      "id": "1425",
+      "nombre": "jose",
+      "apellido": "luis",
+      "email": "jluisacosta270305@gmail.com",
+      "password": "4512"
+    },
+    {
+      "id": "f710",
+      "nombre": "sebastian",
+      "apellido": "ramirez",
+      "email": "sebaxs@gmail.com",
+      "password": "1402"
+    }
+  ],
+  "pagos": [
+    {
+      "id": "1a36",
+      "nombre": "juan peres",
+      "correo": "glenyvanegas45@gmail.com",
+      "evento": "Cumpleaños",
+      "fecha": "2025-06-27",
+      "monto": "5000"
+    },
+    {
+      "id": "6aa0",
+      "nombre": "juan peres",
+      "correo": "eclipseillumecraftoficial@gmail.com",
+      "evento": "Quince años",
+      "fecha": "2025-06-27",
+      "monto": "8000"
+    }
+  ]
+}

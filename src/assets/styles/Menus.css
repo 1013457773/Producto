@@ -1,0 +1,81 @@
+.menu {
+  background: linear-gradient(to right, #8c0303, #bf7154);
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.menu-title {
+  color: #f2ebdc;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu-links li {
+  transition: transform 0.2s;
+}
+
+.menu-links li:hover {
+  transform: scale(1.1);
+}
+
+.menu-links li a {
+  text-decoration: none;
+  color: #f2ebdc;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu-links li a:hover {
+  background-color: #f2d194;
+  color: #8c0303;
+}
+
+/* Estilos para el botón Cerrar sesión */
+.logout-button {
+  background-color: #f2d194; /* Color de fondo armonizado con el menú */
+  color: #8c0303; /* Color que combina con el esquema de colores */
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+  margin-left: 25px;
+}
+
+.logout-button:hover {
+  background-color: #8c0303; /* Al pasar el ratón, cambio a un tono más oscuro */
+  color: #f2d194; /* El texto cambia de color para resaltar */
+}
+
+.logout-button:focus {
+  outline: none; /* Eliminar el borde por defecto cuando el botón está enfocado */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añadir sombra sutil para mejor enfoque */
+}

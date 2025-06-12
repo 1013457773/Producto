@@ -1,0 +1,109 @@
+:root {
+  --verde-salvia: #6a994e;
+  --verde-claro: #a7c957;
+  --beige-claro: #f2e8cf;
+  --beige-medio: #e9edc9;
+  --beige-oscuro: #ccd5ae;
+  --texto-principal: #333;
+}
+
+.locaciones-container {
+  padding: 40px 20px;
+  background-color: var(--beige-claro);
+  text-align: center;
+}
+
+.locaciones-titulo {
+  font-size: 36px;
+  color: var(--verde-salvia);
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Carrusel general */
+.carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Botones de navegación */
+.nav-btn {
+  background-color: var(--verde-salvia);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--verde-claro);
+}
+
+/* Tarjeta horizontal con imagen al lado */
+.locacion-card-horizontal {
+  display: flex;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.locacion-card-horizontal:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen a la izquierda */
+.locacion-img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Información a la derecha */
+.locacion-info {
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.locacion-info h3 {
+  font-size: 24px;
+  color: var(--verde-salvia);
+  margin-bottom: 8px;
+}
+
+.locacion-info p {
+  color: var(--texto-principal);
+  font-size: 15px;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.consultar-btn {
+  background-color: var(--verde-claro);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.consultar-btn:hover {
+  background-color: var(--verde-salvia);
+}
