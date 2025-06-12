@@ -31,6 +31,14 @@
       "evento": "Quince años",
       "fecha": "2025-06-27",
       "monto": "8000"
+    },
+    {
+      "id": "383a",
+      "nombre": "juan peres",
+      "correo": "SebastianRamires@gmail.com",
+      "evento": "Boda",
+      "fecha": "2025-06-22",
+      "monto": "3998"
     }
   ]
 }
