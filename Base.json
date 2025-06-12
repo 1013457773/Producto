@@ -13,6 +13,13 @@
       "apellido": "ramirez",
       "email": "sebaxs@gmail.com",
       "password": "1402"
+    },
+    {
+      "id": "9701",
+      "nombre": "hanna",
+      "apellido": "Rivera",
+      "email": "HannaGamerlol2020@gmail.com",
+      "password": "789456"
     }
   ],
   "pagos": [
@@ -39,6 +46,14 @@
       "evento": "Boda",
       "fecha": "2025-06-22",
       "monto": "3998"
+    },
+    {
+      "id": "ed99",
+      "nombre": "Hanna",
+      "correo": "HannaGamerlol2020@gmail.com",
+      "evento": "Prom",
+      "fecha": "2025-06-27",
+      "monto": "7000"
     }
   ]
 }
