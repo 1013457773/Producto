@@ -180,7 +180,7 @@ Tarjetas con opiniones recibidas.
 
 ✅ Scripts para Git
 
-# Inicializar Git (si aún no lo hiciste)
+
 git init
 git add .
 git commit -m "Primera versión completa"
