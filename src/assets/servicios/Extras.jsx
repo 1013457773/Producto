@@ -67,6 +67,10 @@ export default function Eventos() {
   return (
     <div>
       <Menu />
+      <br />
+      <br />
+      <br />
+      <br />
       <section className="eventos-extras">
         <h2 className="eventos-titulo">Servicios Extras que ofrecemos</h2>
         <p className="eventos-descripcion">

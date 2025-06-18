@@ -1,4 +1,4 @@
-const URL_API = "/api"; 
+const URL_API = "/api";
 
 // ======================== USUARIOS ========================
 
@@ -83,4 +83,44 @@ export async function eliminarPago(id) {
 
   if (!res.ok) throw new Error("Error al eliminar el pago");
   return true;
+}
+
+// ======================== RESERVAS ========================
+
+// Obtener todas las reservas
+export async function obtenerReservas() {
+  const res = await fetch(`${URL_API}/reservas`);
+  if (!res.ok) throw new Error("Error al obtener reservas");
+  return res.json();
+}
+
+// Crear nueva reserva
+export async function crearReserva(reserva) {
+  const res = await fetch(`${URL_API}/reservas`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(reserva),
+  });
+  if (!res.ok) throw new Error("Error al crear la reserva");
+  return res.json();
+}
+
+// ======================== FEEDBACK ========================
+
+// Obtener feedbacks
+export async function obtenerFeedbacks() {
+  const res = await fetch(`${URL_API}/feedbacks`);
+  if (!res.ok) throw new Error("Error al obtener feedbacks");
+  return res.json();
+}
+
+// Enviar feedback
+export async function enviarFeedback(feedback) {
+  const res = await fetch(`${URL_API}/feedbacks`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(feedback),
+  });
+  if (!res.ok) throw new Error("Error al enviar feedback");
+  return res.json();
 }

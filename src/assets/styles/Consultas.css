@@ -1,0 +1,101 @@
+.consultas {
+  padding: 2rem;
+  background-color: #f5f8fa;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: #2c3e50;
+  box-sizing: border-box;
+}
+
+.consultas h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #34495e;
+  border-bottom: 4px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.consultas h2 {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.consultas section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.consultas section:hover {
+  transform: translateY(-4px);
+}
+
+.recharts-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.tarjetas-reservas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tarjeta-reserva {
+  background-color: #ffffff;
+  border-left: 6px solid #3498db;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  width: 270px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-reserva:hover {
+  transform: translateY(-6px);
+}
+
+.tarjeta-reserva h3 {
+  margin-top: 0;
+  color: #2980b9;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-reserva p {
+  margin: 0.3rem 0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .consultas h1 {
+    font-size: 1.8rem;
+  }
+
+  .consultas h2 {
+    font-size: 1.3rem;
+  }
+
+  .consultas {
+    padding: 1rem;
+  }
+
+  .consultas section {
+    padding: 1rem;
+  }
+
+  .tarjeta-reserva {
+    width: 100%;
+    max-width: 350px;
+  }
+}

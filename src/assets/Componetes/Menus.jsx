@@ -1,7 +1,6 @@
-// src/assets/Componetes/Menus.jsx
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "../styles/Menus.css"; 
+import "../styles/Menus.css";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -23,10 +22,19 @@ const Menu = () => {
             <Link to="/servicios">Extras</Link>
           </li>
           <li>
-            <Link to="/Pagos">Pagos</Link>
+            <Link to="/pagos">Pagos</Link>
           </li>
           <li>
             <Link to="/contacto">Contacto</Link>
+          </li>
+          <li>
+            <Link to="/consultas">Consultas</Link>
+          </li>
+          <li>
+            <Link to="/reservas">Reservas</Link>
+          </li>
+          <li>
+            <Link to="/encuesta">Encuestas</Link>
           </li>
         </ul>
         <button onClick={handleLogout} className="logout-button">

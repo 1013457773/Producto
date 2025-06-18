@@ -90,6 +90,8 @@ export default function Pagos() {
       <br />
       <br />
       <br />
+      <br />
+      <br />
       <section className="servicios-extras">
         <h2 className="titulo-principal">Formulario de Pago</h2>
         <form className="formulario-pago" onSubmit={handleSubmit}>
@@ -119,11 +121,18 @@ export default function Pagos() {
             required
           >
             <option value="">-- Selecciona un evento --</option>
-            <option value="Boda">Boda</option>
-            <option value="Cumpleaños">Cumpleaños</option>
-            <option value="Quince años">Quince años</option>
-            <option value="Prom">Prom</option>
-            <option value="Otro">Otro</option>
+            <option value="Fiestas Empresariales">Fiestas Empresariales</option>
+            <option value="Cumpleaños Inolvidables">
+              Cumpleaños Inolvidables
+            </option>
+            <option value="Quince Años">Quince Años</option>
+            <option value="Matrimonios">Matrimonios</option>
+            <option value="Primeras Comuniones">Primeras Comuniones</option>
+            <option value="Grados">Grados</option>
+            <option value="Bautizos">Bautizos</option>
+            <option value="Eventos Personalizados">
+              Eventos Personalizados
+            </option>
           </select>
 
           <label>Fecha del Evento:</label>

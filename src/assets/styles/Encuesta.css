@@ -1,0 +1,148 @@
+.encuesta-container {
+  padding: 10rem 2rem 3rem;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.encuesta-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.formulario-encuesta {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formulario-encuesta label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.formulario-encuesta input,
+.formulario-encuesta select,
+.formulario-encuesta textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.formulario-encuesta input:focus,
+.formulario-encuesta select:focus,
+.formulario-encuesta textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.formulario-encuesta textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario-encuesta button {
+  margin-top: 1.8rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario-encuesta button:hover {
+  background-color: #2980b9;
+}
+
+/* Lista de opiniones */
+.feedback-lista {
+  max-width: 1000px;
+  margin: 3rem auto 2rem;
+  text-align: center;
+}
+
+.feedback-lista h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tarjetas-feedback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.tarjeta-feedback {
+  background-color: #ffffff;
+  border-left: 6px solid #3498db;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  width: 270px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-feedback:hover {
+  transform: translateY(-6px);
+}
+
+.tarjeta-feedback h3 {
+  margin-top: 0;
+  color: #2980b9;
+  font-size: 1.2rem;
+}
+
+.tarjeta-feedback p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .formulario-encuesta {
+    padding: 1.2rem;
+  }
+
+  .encuesta-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .tarjeta-feedback {
+    width: 100%;
+    max-width: 320px;
+  }
+}

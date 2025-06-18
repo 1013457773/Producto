@@ -1,128 +1,120 @@
-🎉 Eventos Gerizim
-“Celebramos sueños, creamos recuerdos”
+# 🎉 Eventos Gerizim
 
-¿Quiénes Somos?
+> “Celebramos sueños, creamos recuerdos”
 
-Eventos Gerizim es una casa de eventos dedicada a convertir cada celebración en una experiencia inolvidable. Nacimos con la pasión de servir y hacer realidad los sueños de nuestros clientes, combinando creatividad, compromiso y excelencia en cada detalle.
+---
 
-🎯 Nuestro Objetivo
+## ¿Quiénes Somos?
 
-Queremos posicionarnos como la empresa líder en organización de eventos en Medellín y Bogotá. Más que ofrecer un servicio, creamos recuerdos mágicos y celebraciones que se graban para siempre en el corazón de nuestros clientes.
+**Eventos Gerizim** es una casa de eventos dedicada a convertir cada celebración en una experiencia inolvidable.  
+Nacimos con la pasión de servir y hacer realidad los sueños de nuestros clientes, combinando creatividad, compromiso y excelencia en cada detalle.
 
-🛎️ Nuestros Servicios
+---
 
-🎂 Cumpleaños y Quince Años
+## 🎯 Nuestro Objetivo
 
-💍 Matrimonios inolvidables
+Posicionarnos como la empresa líder en organización de eventos en Medellín y Bogotá.  
+Más que ofrecer un servicio, **creamos recuerdos mágicos** y celebraciones que se graban para siempre en el corazón de nuestros clientes.
 
-🕊️ Bautizos y Primeras Comuniones
+---
 
-🎓 Fiestas de Grado
+## 🛎️ Nuestros Servicios
 
-🏢 Fiestas empresariales y cenas corporativas
+- 🎂 Cumpleaños Inolvidables
+- 👑 Quince Años
+- 💍 Matrimonios
+- 🕊️ Bautizos
+- 📖 Primeras Comuniones
+- 🎓 Grados
+- 🏢 Fiestas Empresariales
+- 🪄 Eventos Personalizados
+- 🧁 Servicios adicionales: tortas, flores, comidas, arepas
 
-🪄 Eventos personalizados y temáticos
+---
 
-🧁 Opciones gastronómicas: desayunos, almuerzos, refrigerios, tortas
-
-📍 Lugares para eventos: finca, salón o espacio del cliente
-
-📖 Nuestra Historia
-
-Lo que comenzó como un pequeño sueño familiar fue creciendo con cada evento exitoso. "Gerizim" significa “bendición”, y creemos que cada celebración debe estar llena de esa energía. Hoy, somos un equipo comprometido con brindar un servicio excepcional, cuidando cada detalle como si fuera nuestro propio evento.
-
-👨‍💻 Equipo de Desarrollo
+## 👨‍💻 Equipo de Desarrollo
 
 Proyecto realizado por estudiantes del CESDE:
 
-José Luis Acosta Vanega
+- José Luis Acosta Vanega
+- Sebastián Ramírez
+- Danvi Álvarez
+- Samuel Gómez
 
-Sebastián Ramírez
+---
 
-Danvi Álvarez
+## 🧠 Tecnologías Usadas
 
-Samuel Gómez
+- ⚛️ React (Vite)
+- ☕ Java Spring Boot
+- 🗂️ JSON-Server (API local simulada)
+- 🎨 CSS modular
+- 📊 Recharts (gráficas dinámicas)
+- 🧪 SweetAlert2 (alertas interactivas)
+- 🐘 SQL Server (para el backend real)
+- 🐍 Python + Pandas (análisis adicional de datos)
+- 📈 Matplotlib + Seaborn (gráficas de alto nivel en Python)
 
-🧠 Tecnologías Usadas
+---
 
-⚛️ React JS (Vite)
+## 📊 Consultas y Analítica Visual
 
-🎨 CSS y HTML
+Módulo incluido en la ruta protegida `/consultas`, donde se muestran:
 
-🗂️ JSON-Server (para simular la base de datos)
+- 📌 **Pagos por tipo de evento**
+- 👥 **Total pagado por cada persona**
+- 📈 **Distribución circular de eventos**
+- 📅 **Fechas con más eventos** (coloreadas, rojo = más concurridas)
 
-☕ Java (Spring Boot con Maven)
+Este panel se construyó usando `Recharts`, es responsivo y visualmente profesional.
 
-🖥️ XAMPP (para otros servicios locales)
+---
 
-📊 Python + Pandas (para análisis de datos de pagos en consola)
-
-📂 Estructura del Proyecto
+## 📂 Estructura del Proyecto
 
 Gerizim/
 ├── public/
 ├── src/
 │ ├── assets/
-│ │ ├── Componentes/
-│ │ ├── Eventos/
-│ │ ├── ExtrasSERVER/
-│ │ ├── imagenes/
-│ │ ├── img/
+│ │ ├── Componetes/
+│ │ │ └── Menus.jsx
 │ │ ├── Pages/
 │ │ ├── servicios/
-│ │ └── styles/
+│ │ │ └── Consultas.jsx
+│ │ ├── ExtrasSERVER/
+│ │ ├── styles/
 │ ├── App.jsx
-│ ├── AppGerizim.jsx
-│ ├── enrutador.jsx
 │ ├── main.jsx
-│ └── Api.js
+│ ├── Api.js
 ├── Base.json
-├── PagosAnalisis.py ← Script de análisis de pagos
-├── index.html
+├── PagosAnalisis.py (opcional con Python)
 ├── package.json
 └── vite.config.js
 
-🚀 ¿Cómo Ejecutar el Proyecto?
+## 🚀 ¿Cómo Ejecutar el Proyecto?
 
-Frontend (React)
+### 🔹 Frontend (React)
 
-Clona el repositorio
-
-Ejecuta:
-
+```bash
 npm install
 npm run dev
 
-Backend Simulado (JSON Server)
+Backend simulado con JSON-Server
 
-npx json-server --watch Base.json --port 3001
+npx json-server --watch Base.json --port 3000
 
-Asegúrate de que esté en sincronía con tus peticiones en React.
+📦 Dependencias (Frontend React)
 
-Análisis de Datos (opcional - Python)
+npm install react-router-dom
+npm install sweetalert2
+npm install recharts
+npm install json-server --save-dev
 
-Si deseas ejecutar análisis de pagos registrados:
+🐍 Dependencias Python (Análisis opcional)
 
-Asegúrate de tener Python instalado.
+pip install pandas matplotlib seaborn
 
-Instala pandas:
-
-pip install pandas
-
-Ejecuta el script de análisis:
-
-python PagosAnalisis.py
-
-Este script mostrará en consola:
-
-Total de usuarios registrados
-
-Cantidad de pagos por tipo de evento
-
-Monto total por tipo de evento
-
-Total pagado por cada persona
-
-Backend Real (Spring Boot + SQL Server)
-
-Ver carpeta backend si se está trabajando con IntelliJ y Maven para conexión a base de datos real.
+✨ Frase Final
+En Eventos Gerizim, cada detalle cuenta. Creamos experiencias que trascienden, recuerdos que perduran, y eventos que se sienten como magia.
+¡Gracias por celebrar con nosotros!
+```

@@ -1,51 +1,75 @@
 import json
 import pandas as pd
-from collections import Counter
+import matplotlib.pyplot as plt
+import seaborn as sns
 import os
 
-# Ruta al archivo Base.json (ajusta si está en otra carpeta)
+sns.set_theme(style='whitegrid', palette='pastel')
+
+# Ruta JSON
 ruta_json = "Base.json"
 
-# Validar si el archivo existe
 if not os.path.exists(ruta_json):
     print(f"❌ No se encontró el archivo: {ruta_json}")
     exit()
 
-# Cargar datos
 with open(ruta_json, encoding="utf-8") as f:
     try:
         data = json.load(f)
     except json.JSONDecodeError:
-        print("❌ Error al leer el archivo JSON. Verifica su formato.")
+        print("❌ Error al leer el archivo JSON.")
         exit()
 
 usuarios = data.get("usuarios", [])
 pagos = data.get("pagos", [])
 
-# Mostrar cantidad total de usuarios
-print("📋 ANALÍTICA DE EVENTOS GERIZIM")
-print("=" * 40)
-print(f"\n👥 Total de usuarios registrados: {len(usuarios)}")
+df = pd.DataFrame(pagos)
+df["monto"] = pd.to_numeric(df["monto"], errors="coerce").fillna(0)
 
-# Crear DataFrame de pagos
-df_pagos = pd.DataFrame(pagos)
+if df.empty:
+    print("⚠️ No hay pagos registrados.")
+    exit()
 
-if df_pagos.empty:
-    print("\n⚠️ No hay pagos registrados.")
-else:
-    # Convertir montos a números (por si vienen como texto)
-    df_pagos["monto"] = pd.to_numeric(df_pagos["monto"], errors="coerce").fillna(0)
+# Gráfico 1: Total por evento
+total_por_evento = df.groupby("evento")["monto"].sum().reset_index()
+plt.figure(figsize=(8,5))
+sns.barplot(data=total_por_evento, x="evento", y="monto")
+plt.title("💰 Total Pagado por Tipo de Evento")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("grafico_total_evento.png")
+plt.close()
 
-    print("\n📊 Cantidad de pagos por tipo de evento:")
-    conteo_eventos = df_pagos["evento"].value_counts()
-    print(conteo_eventos.to_string())
+# Gráfico 2: Distribución de eventos
+plt.figure(figsize=(6,6))
+df["evento"].value_counts().plot(kind="pie", autopct="%1.1f%%", pctdistance=0.85)
+plt.title("📊 Distribución de Tipos de Eventos")
+plt.ylabel("")
+plt.tight_layout()
+plt.savefig("grafico_pie_evento.png")
+plt.close()
 
-    print("\n💰 Monto total pagado por tipo de evento:")
-    monto_por_evento = df_pagos.groupby("evento")["monto"].sum().sort_values(ascending=False)
-    print(monto_por_evento.to_string(float_format="%.2f"))
+# Gráfico 3: Total por persona
+total_por_persona = df.groupby("nombre")["monto"].sum().reset_index()
+plt.figure(figsize=(8,5))
+sns.barplot(data=total_por_persona, x="nombre", y="monto")
+plt.title("💳 Total Pagado por Persona")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("grafico_total_persona.png")
+plt.close()
 
-    print("\n📄 Total pagado por cada persona:")
-    pagos_por_persona = df_pagos.groupby("nombre")["monto"].sum().sort_values(ascending=False)
-    print(pagos_por_persona.to_string(float_format="%.2f"))
+# Plantilla HTML
+with open("template.html", "r", encoding="utf-8") as f:
+    template = f.read()
 
-    print("\n✅ Análisis completado con éxito.\n")
+html_filled = template.format(
+    usuarios=len(usuarios),
+    tabla_total_evento=total_por_evento.to_html(index=False, classes="table table-striped"),
+    tabla_total_persona=total_por_persona.to_html(index=False, classes="table table-striped"),
+)
+
+with open("reporte_gerizim.html", "w", encoding="utf-8") as f:
+    f.write(html_filled)
+
+print("✅ Reporte generado: abre 'reporte_gerizim.html' en tu navegador.")

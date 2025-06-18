@@ -40,20 +40,88 @@
       "monto": "8000"
     },
     {
-      "id": "383a",
-      "nombre": "juan peres",
-      "correo": "SebastianRamires@gmail.com",
-      "evento": "Boda",
-      "fecha": "2025-06-22",
-      "monto": "3998"
-    },
-    {
       "id": "ed99",
       "nombre": "Hanna",
       "correo": "HannaGamerlol2020@gmail.com",
       "evento": "Prom",
       "fecha": "2025-06-27",
       "monto": "7000"
+    },
+    {
+      "id": "738c",
+      "nombre": "jose luis",
+      "correo": "SebastianRamires@gmail.com",
+      "evento": "Matrimonios",
+      "fecha": "2025-06-27",
+      "monto": "4000"
+    },
+    {
+      "id": "5b52",
+      "nombre": "Hanna",
+      "correo": "eclipseillumecraftoficial@gmail.com",
+      "evento": "Quince Años",
+      "fecha": "2025-11-19",
+      "monto": "8000"
+    },
+    {
+      "id": "3dcf",
+      "nombre": "Hanna",
+      "correo": "eclipseillumecraftoficial@gmail.com",
+      "evento": "Bautizos",
+      "fecha": "2025-11-27",
+      "monto": "4000"
+    },
+    {
+      "id": "8929",
+      "nombre": "jose luis",
+      "correo": "jluisacosta270305@gmail.com",
+      "evento": "Quince Años",
+      "fecha": "2025-11-30",
+      "monto": "6500"
+    }
+  ],
+  "reservas": [
+    {
+      "id": "f489",
+      "nombre": "juan peres",
+      "correo": "jluisacosta270305@gmail.com",
+      "tipo": "Grado",
+      "personas": "2000",
+      "fecha": "2025-06-19"
+    },
+    {
+      "id": "8171",
+      "nombre": "juan peres",
+      "correo": "eclipseillumecraftoficial@gmail.com",
+      "tipo": "Grado",
+      "personas": "400",
+      "fecha": "2025-11-13"
+    },
+    {
+      "id": "7988",
+      "nombre": "Hanna",
+      "correo": "SebastianRamires@gmail.com",
+      "tipo": "Quince Años",
+      "personas": "400",
+      "fecha": "2025-11-22"
+    },
+    {
+      "id": "6b8c",
+      "nombre": "tomas",
+      "correo": "eclipseillumecraftoficial@gmail.com",
+      "tipo": "Primera Comunión",
+      "personas": "500",
+      "fecha": "2025-12-20"
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "da0c",
+      "nombre": "tomas",
+      "correo": "eclipseillumecraftoficial@gmail.com",
+      "calificacion": "Excelente",
+      "comentario": "no me gusto mucho ",
+      "recomendar": "Sí"
     }
   ]
 }
