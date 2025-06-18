@@ -114,6 +114,81 @@ npm install json-server --save-dev
 
 pip install pandas matplotlib seaborn
 
+🧩 Tecnologías utilizadas
+
+React + Vite
+
+React Router DOM
+
+SweetAlert2
+
+Recharts
+
+React Calendar
+
+JSON Server (como backend local)
+
+🧩 Tecnologías utilizadas
+
+React + Vite
+
+React Router DOM
+
+SweetAlert2
+
+Recharts
+
+React Calendar
+
+JSON Server (como backend local)
+
+📋 Funcionalidades
+
+✅ Login y Registro
+
+Validación de usuario desde usuarios en Base.json.
+
+✅ Gestión de pagos
+
+Registro de pagos por evento.
+
+Edición y eliminación.
+
+Tarjetas visuales.
+
+✅ Servicios Extra (Flores, Tortas, Arepas, etc.)
+
+Pantallas visuales y rutas protegidas.
+
+✅ Consultas
+
+Gráficos por evento, persona, fecha.
+
+Visualización de reservas.
+
+✅ Gestión de reservas
+
+Calendario interactivo con fechas ocupadas.
+
+Tarjetas de reservas.
+
+✅ Encuesta de satisfacción
+
+Formulario con animación.
+
+Tarjetas con opiniones recibidas.
+
+✅ Scripts para Git
+
+# Inicializar Git (si aún no lo hiciste)
+git init
+git add .
+git commit -m "Primera versión completa"
+git branch -M main
+git remote add origin https://github.com/1013457773/Producto.git
+git push -u origin main
+
+
 ✨ Frase Final
 En Eventos Gerizim, cada detalle cuenta. Creamos experiencias que trascienden, recuerdos que perduran, y eventos que se sienten como magia.
 ¡Gracias por celebrar con nosotros!
