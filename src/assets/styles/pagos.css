@@ -1,136 +1,143 @@
+
 .servicios-extras {
-  padding: 40px 20px;
-  background-color: #f7f1e8; /* Color claro, cálido y elegante */
+  padding: 10rem 2rem 4rem; /* Espacio superior suficiente para el menú fijo */
+  background: linear-gradient(to right, #fff8f1, #f7e8e8);
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
+/* Títulos */
 .titulo-principal {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #8c0327;
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  color: #b0003a;
+  font-weight: bold;
 }
 
-.descripcion {
+.titulo-formulario {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  color: #555;
+  font-size: 1.8rem;
+  color: #c2185b;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
-/* Formulario de pago */
+/* Formulario */
+.formulario-pago-seccion {
+  margin-bottom: 60px;
+}
+
 .formulario-pago {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: 0 auto 60px auto;
-  padding: 30px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  gap: 20px;
+  transition: all 0.3s ease;
 }
 
-.formulario-pago label {
+.grupo-formulario label {
   font-weight: 600;
-  color: #333;
+  display: block;
+  margin-bottom: 6px;
+  color: #2c2c2c;
 }
 
-.formulario-pago input,
-.formulario-pago select {
-  padding: 12px;
-  border: 1.5px solid #ddd;
+.grupo-formulario input,
+.grupo-formulario select {
+  width: 95%;
+  padding: 14px;
+  border: 1.5px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  background-color: #fff;
-  transition: border 0.3s, box-shadow 0.3s;
+  background-color: #fefefe;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.formulario-pago input:focus,
-.formulario-pago select:focus {
-  border-color: #8c0327;
-  box-shadow: 0 0 5px rgba(140, 3, 39, 0.3);
+.grupo-formulario input:focus,
+.grupo-formulario select:focus {
+  border-color: #b0003a;
+  box-shadow: 0 0 6px rgba(176, 0, 58, 0.3);
   outline: none;
 }
 
-.formulario-pago button {
-  margin-top: 10px;
-  padding: 14px;
-  background: linear-gradient(135deg, #8c0327, #f2055c);
-  color: white;
+.boton-submit {
+  padding: 15px;
+  background: linear-gradient(135deg, #b0003a, #e63946);
+  color: #fff;
+  border: none;
   font-weight: bold;
   font-size: 1rem;
-  border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.formulario-pago button:hover {
-  background: linear-gradient(135deg, #590219, #d90f4e);
+.boton-submit:hover {
+  background: linear-gradient(135deg, #87002c, #cf2a3f);
   transform: scale(1.03);
 }
 
-/* Tarjetas */
+/* Lista de pagos */
 .tarjetas-pagos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 0 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 15px;
 }
 
 .tarjeta {
-  background: #fff;
+  background-color: #ffffff;
   border-radius: 16px;
-  width: 290px;
-  padding: 22px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 20px 24px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
 .tarjeta:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
 }
 
 .tarjeta h3 {
-  color: #8c0327;
-  font-size: 1.25rem;
+  color: #b0003a;
+  font-size: 1.3rem;
   margin-bottom: 10px;
   text-transform: capitalize;
 }
 
 .tarjeta p {
   margin: 6px 0;
-  color: #444;
   font-size: 0.95rem;
-  word-break: break-word;
+  color: #444;
 }
 
 .tarjeta strong {
-  color: #591c3e;
+  color: #991b3d;
 }
 
+/* Acciones */
 .acciones {
+  margin-top: 15px;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 15px;
 }
 
 .acciones button {
   padding: 8px 14px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .acciones button:hover {
@@ -138,11 +145,34 @@
 }
 
 .acciones button:first-child {
-  background-color: #f2eeac;
+  background-color: #fff3cd;
   color: #8c0327;
 }
 
 .acciones button:last-child {
-  background-color: #8c0327;
+  background-color: #b0003a;
   color: white;
+}
+
+/* Mensaje vacío */
+.mensaje-vacio {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .formulario-pago {
+    padding: 20px;
+  }
+
+  .titulo-principal {
+    font-size: 2.1rem;
+  }
+
+  .titulo-formulario {
+    font-size: 1.5rem;
+  }
 }

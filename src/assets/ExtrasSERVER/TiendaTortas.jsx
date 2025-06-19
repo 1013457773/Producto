@@ -34,7 +34,7 @@ export default function TiendaTortas() {
     {
       id: 3,
       titulo: "Red Velvet",
-      descripcion: "Pastel rojo aterciopelado con glaseado.",
+      descripcion: "Pastel rojo aterciopelado con glaseado cremoso.",
       precio: "$24.00",
       calificacion: 4.8,
       imagen: torta3,
@@ -42,7 +42,7 @@ export default function TiendaTortas() {
     {
       id: 4,
       titulo: "Torta de Zanahoria",
-      descripcion: "Densa y dulce con nueces y crema.",
+      descripcion: "Densa, dulce y con nueces, cubierta de crema.",
       precio: "$21.00",
       calificacion: 4.4,
       imagen: torta4,
@@ -50,7 +50,7 @@ export default function TiendaTortas() {
     {
       id: 5,
       titulo: "Torta Tres Leches",
-      descripcion: "Pastel suave empapado en tres leches.",
+      descripcion: "Clásico pastel empapado en tres tipos de leche.",
       precio: "$23.00",
       calificacion: 4.6,
       imagen: torta5,
@@ -58,7 +58,7 @@ export default function TiendaTortas() {
     {
       id: 6,
       titulo: "Torta de Vainilla",
-      descripcion: "Clásica con glaseado suave.",
+      descripcion: "Bizcocho esponjoso con suave glaseado de vainilla.",
       precio: "$19.00",
       calificacion: 4.3,
       imagen: torta6,
@@ -66,7 +66,7 @@ export default function TiendaTortas() {
     {
       id: 7,
       titulo: "Torta Oreo",
-      descripcion: "Con galletas Oreo trituradas y crema.",
+      descripcion: "Con galletas Oreo trituradas y relleno cremoso.",
       precio: "$25.00",
       calificacion: 4.9,
       imagen: torta7,
@@ -74,7 +74,7 @@ export default function TiendaTortas() {
     {
       id: 8,
       titulo: "Torta Cheesecake",
-      descripcion: "Base de galleta con relleno cremoso.",
+      descripcion: "Base de galleta con relleno cremoso tipo cheesecake.",
       precio: "$26.00",
       calificacion: 4.7,
       imagen: torta8,
@@ -82,7 +82,7 @@ export default function TiendaTortas() {
     {
       id: 9,
       titulo: "Torta Limón",
-      descripcion: "Sabor cítrico con cobertura dulce.",
+      descripcion: "Sabor cítrico con un glaseado dulce y fresco.",
       precio: "$20.00",
       calificacion: 4.5,
       imagen: torta9,
@@ -90,7 +90,7 @@ export default function TiendaTortas() {
     {
       id: 10,
       titulo: "Torta Piña",
-      descripcion: "Con rodajas de piña y caramelo.",
+      descripcion: "Con rodajas de piña caramelizadas y base suave.",
       precio: "$22.00",
       calificacion: 4.6,
       imagen: torta10,
@@ -102,6 +102,10 @@ export default function TiendaTortas() {
       <Menu />
       <section className="tienda">
         <h2 className="tienda-titulo">Tienda de Tortas</h2>
+        <p className="tienda-subtitulo">
+          Explora nuestra variedad de tortas artesanales hechas con amor y los mejores ingredientes. ¡Encuentra tu favorita!
+        </p>
+
         <div className="productos-grid">
           {productos.map((producto) => (
             <div key={producto.id} className="producto-card">
@@ -110,10 +114,11 @@ export default function TiendaTortas() {
                 alt={producto.titulo}
                 className="producto-img"
               />
-              <h3>{producto.titulo}</h3>
+              <h3 className="producto-titulo">{producto.titulo}</h3>
               <p className="descripcion">{producto.descripcion}</p>
               <p className="precio">{producto.precio}</p>
-              <p className="calificacion">⭐ {producto.calificacion}</p>
+              <p className="calificacion">⭐ {producto.calificacion} / 5</p>
+              <button className="boton-comprar">Ver más</button>
             </div>
           ))}
         </div>

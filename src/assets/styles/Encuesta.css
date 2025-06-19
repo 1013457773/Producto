@@ -46,7 +46,7 @@
 .formulario-encuesta input,
 .formulario-encuesta select,
 .formulario-encuesta textarea {
-  width: 100%;
+  width: 95%;
   padding: 0.6rem;
   margin-top: 0.3rem;
   border-radius: 8px;

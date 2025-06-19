@@ -1,8 +1,7 @@
 import React from "react";
 import Menu from "../Componetes/Menus.jsx";
-import "../Eventos/cssEventos/TiendaTortas.css";
+import "../Eventos/cssEventos/TiendaTortas.css"; // Puedes renombrarlo a TiendaComidas.css si prefieres
 
-// Imágenes de comidas
 import comida1 from "../imagenes/comidas/c1.jpg";
 import comida2 from "../imagenes/comidas/c2.jpg";
 import comida3 from "../imagenes/comidas/c3.jpg";
@@ -103,6 +102,9 @@ export default function TiendaComidas() {
       <Menu />
       <section className="tienda">
         <h2 className="tienda-titulo">Tienda de Comidas</h2>
+        <p className="tienda-subtitulo">
+          Deléitate con nuestros platos internacionales preparados con ingredientes frescos y mucho sabor. ¡Haz tu pedido ahora!
+        </p>
         <div className="productos-grid">
           {productos.map((producto) => (
             <div key={producto.id} className="producto-card">
@@ -111,10 +113,11 @@ export default function TiendaComidas() {
                 alt={producto.titulo}
                 className="producto-img"
               />
-              <h3>{producto.titulo}</h3>
+              <h3 className="producto-titulo">{producto.titulo}</h3>
               <p className="descripcion">{producto.descripcion}</p>
               <p className="precio">{producto.precio}</p>
-              <p className="calificacion">⭐ {producto.calificacion}</p>
+              <p className="calificacion">⭐ {producto.calificacion} / 5</p>
+              <button className="boton-comprar">Ver más</button>
             </div>
           ))}
         </div>

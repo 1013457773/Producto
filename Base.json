@@ -32,14 +32,6 @@
       "monto": "5000"
     },
     {
-      "id": "6aa0",
-      "nombre": "juan peres",
-      "correo": "eclipseillumecraftoficial@gmail.com",
-      "evento": "Quince años",
-      "fecha": "2025-06-27",
-      "monto": "8000"
-    },
-    {
       "id": "ed99",
       "nombre": "Hanna",
       "correo": "HannaGamerlol2020@gmail.com",
@@ -72,12 +64,12 @@
       "monto": "4000"
     },
     {
-      "id": "8929",
-      "nombre": "jose luis",
-      "correo": "jluisacosta270305@gmail.com",
+      "id": "6ba1",
+      "nombre": "Arantza ",
+      "correo": "HannaGamerlol2020@gmail.com",
       "evento": "Quince Años",
-      "fecha": "2025-11-30",
-      "monto": "6500"
+      "fecha": "2025-08-21",
+      "monto": "2300"
     }
   ],
   "reservas": [

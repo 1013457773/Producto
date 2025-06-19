@@ -11,15 +11,6 @@ const Presentacion = () => {
         la pasión de servir y hacer realidad los sueños de nuestros clientes,
         combinando creatividad, compromiso y excelencia en cada detalle.
       </p>
-
-      <h2 className="presentacion-subtitulo">Nuestro Objetivo 🎯</h2>
-      <p className="presentacion-texto">
-        Queremos posicionarnos como la empresa líder en organización de eventos
-        en Medellín y Bogotá. Más que ofrecer un servicio, creamos recuerdos
-        mágicos y celebraciones que se graban para siempre en el corazón de
-        nuestros clientes.
-      </p>
-
       <h2 className="presentacion-subtitulo">Nuestros Servicios 🛎️</h2>
       <ul className="presentacion-lista">
         <li>🎂 Cumpleaños y Quince Años</li>

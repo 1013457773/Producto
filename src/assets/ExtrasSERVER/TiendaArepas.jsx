@@ -1,8 +1,8 @@
+
 import React from "react";
 import Menu from "../Componetes/Menus.jsx";
-import "../Eventos/cssEventos/TiendaTortas.css";
+import "../Eventos/cssEventos/TiendaTortas.css"; // Puedes renombrarlo a TiendaArepas.css si quieres separarlo
 
-// Importa tus imágenes aquí
 import arepa1 from "../imagenes/arepas/a1.jpg";
 import arepa2 from "../imagenes/arepas/a2.jpg";
 import arepa3 from "../imagenes/arepas/a3.jpg";
@@ -103,6 +103,9 @@ export default function TiendaArepas() {
       <Menu />
       <section className="tienda">
         <h2 className="tienda-titulo">Tienda de Arepas</h2>
+        <p className="tienda-subtitulo">
+          Descubre nuestras deliciosas arepas artesanales con rellenos para todos los gustos. ¡Recién hechas y llenas de sabor!
+        </p>
         <div className="productos-grid">
           {productos.map((producto) => (
             <div key={producto.id} className="producto-card">
@@ -111,10 +114,11 @@ export default function TiendaArepas() {
                 alt={producto.titulo}
                 className="producto-img"
               />
-              <h3>{producto.titulo}</h3>
+              <h3 className="producto-titulo">{producto.titulo}</h3>
               <p className="descripcion">{producto.descripcion}</p>
               <p className="precio">{producto.precio}</p>
-              <p className="calificacion">⭐ {producto.calificacion}</p>
+              <p className="calificacion">⭐ {producto.calificacion} / 5</p>
+              <button className="boton-comprar">Ver más</button>
             </div>
           ))}
         </div>

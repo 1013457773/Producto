@@ -20,13 +20,11 @@ export default function Consultas() {
   const [reservas, setReservas] = useState([]);
 
   useEffect(() => {
-    // Cargar pagos
     fetch("http://localhost:3000/pagos")
       .then((res) => res.json())
       .then((data) => setPagos(data))
       .catch((error) => console.error("Error cargando pagos:", error));
 
-    // Cargar reservas
     obtenerReservas()
       .then((data) => setReservas(data))
       .catch((error) =>
@@ -34,9 +32,6 @@ export default function Consultas() {
       );
   }, []);
 
-  // === PAGOS ===
-
-  // Por tipo de evento
   const pagosPorEvento = pagos.reduce((acc, pago) => {
     acc[pago.evento] = (acc[pago.evento] || 0) + 1;
     return acc;
@@ -45,7 +40,6 @@ export default function Consultas() {
     ([evento, cantidad]) => ({ evento, cantidad })
   );
 
-  // Por persona
   const totalPorPersona = pagos.reduce((acc, pago) => {
     acc[pago.nombre] = (acc[pago.nombre] || 0) + Number(pago.monto);
     return acc;
@@ -54,7 +48,6 @@ export default function Consultas() {
     ([nombre, monto]) => ({ nombre, monto })
   );
 
-  // Por fecha
   const eventosPorFecha = pagos.reduce((acc, pago) => {
     const fecha = pago.fecha;
     acc[fecha] = (acc[fecha] || 0) + 1;
@@ -66,9 +59,6 @@ export default function Consultas() {
   const maxCantidad = Math.max(...dataFechas.map((d) => d.cantidad), 0);
   const fechaTop = dataFechas.find((d) => d.cantidad === maxCantidad);
 
-  // === RESERVAS ===
-
-  // Por tipo
   const reservasPorTipo = reservas.reduce((acc, reserva) => {
     acc[reserva.tipo] = (acc[reserva.tipo] || 0) + 1;
     return acc;
@@ -77,7 +67,6 @@ export default function Consultas() {
     ([tipo, cantidad]) => ({ tipo, cantidad })
   );
 
-  // Por fecha
   const reservasPorFecha = reservas.reduce((acc, reserva) => {
     acc[reserva.fecha] = (acc[reserva.fecha] || 0) + 1;
     return acc;
@@ -87,28 +76,17 @@ export default function Consultas() {
   );
 
   const colores = [
-    "#8884d8",
-    "#82ca9d",
-    "#ffc658",
-    "#ff7f50",
-    "#00c49f",
-    "#e74c3c",
-    "#3498db",
+    "#ff80ab", "#f06292", "#ec407a", "#e91e63", "#d81b60",
+    "#c2185b", "#ad1457", "#880e4f"
   ];
 
   return (
     <>
       <Menu />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <div className="consultas">
-        <h1>📊 Consultas y Analítica de Eventos</h1>
+        <h1>🎀 Analítica de Eventos y Pagos</h1>
 
-        {/* Gráfico 1: Pagos por evento */}
+        {/* Gráfico: Pagos por tipo de evento */}
         <section>
           <h2>💰 Pagos por tipo de evento</h2>
           <ResponsiveContainer width="100%" height={300}>
@@ -117,26 +95,26 @@ export default function Consultas() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="cantidad" fill="#8884d8" />
+              <Bar dataKey="cantidad" fill="#f06292" />
             </BarChart>
           </ResponsiveContainer>
         </section>
 
-        {/* Gráfico 2: Total por persona */}
+        {/* Gráfico: Total por persona */}
         <section>
-          <h2>🧾 Total pagado por persona</h2>
+          <h2>👩‍💼 Total pagado por persona</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataPersona}>
               <XAxis dataKey="nombre" />
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="monto" fill="#82ca9d" />
+              <Bar dataKey="monto" fill="#ba68c8" />
             </BarChart>
           </ResponsiveContainer>
         </section>
 
-        {/* Gráfico 3: Pie de eventos */}
+        {/* Gráfico: Distribución de tipos de eventos */}
         <section>
           <h2>🎉 Distribución de tipos de eventos</h2>
           <ResponsiveContainer width="100%" height={300}>
@@ -163,13 +141,12 @@ export default function Consultas() {
           </ResponsiveContainer>
         </section>
 
-        {/* Gráfico 4: Pagos por fecha */}
+        {/* Gráfico: Fechas más activas */}
         <section>
-          <h2>📅 Fechas con más pagos</h2>
+          <h2>📆 Fechas con más pagos</h2>
           {fechaTop && (
-            <p style={{ fontWeight: "bold", color: "#e74c3c" }}>
-              🔥 Fecha más activa: <strong>{fechaTop.fecha}</strong> (
-              {fechaTop.cantidad} pagos)
+            <p style={{ fontWeight: "bold", color: "#c2185b" }}>
+              🔥 Fecha más activa: <strong>{fechaTop.fecha}</strong> ({fechaTop.cantidad} pagos)
             </p>
           )}
           <ResponsiveContainer width="100%" height={300}>
@@ -188,9 +165,7 @@ export default function Consultas() {
                 {dataFechas.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={
-                      entry.cantidad === maxCantidad ? "#e74c3c" : "#3498db"
-                    }
+                    fill={entry.cantidad === maxCantidad ? "#c2185b" : "#f8bbd0"}
                   />
                 ))}
               </Bar>
@@ -198,21 +173,21 @@ export default function Consultas() {
           </ResponsiveContainer>
         </section>
 
-        {/* Gráfico 5: Reservas por tipo */}
+        {/* Gráfico: Reservas por tipo */}
         <section>
-          <h2>📌 Reservas por tipo de evento</h2>
+          <h2>🗂️ Reservas por tipo de evento</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={dataReservasTipo}>
               <XAxis dataKey="tipo" />
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="cantidad" fill="#ff7f50" />
+              <Bar dataKey="cantidad" fill="#f48fb1" />
             </BarChart>
           </ResponsiveContainer>
         </section>
 
-        {/* Gráfico 6: Reservas por fecha */}
+        {/* Gráfico: Reservas por fecha */}
         <section>
           <h2>📅 Reservas por fecha</h2>
           <ResponsiveContainer width="100%" height={300}>
@@ -227,14 +202,14 @@ export default function Consultas() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="cantidad" fill="#00c49f" />
+              <Bar dataKey="cantidad" fill="#ce93d8" />
             </BarChart>
           </ResponsiveContainer>
         </section>
 
         {/* Lista de reservas */}
         <section>
-          <h2>📋 Reservas Registradas</h2>
+          <h2>📋 Reservas registradas</h2>
           <div className="tarjetas-reservas">
             {reservas.length === 0 ? (
               <p>No hay reservas registradas.</p>
@@ -242,18 +217,10 @@ export default function Consultas() {
               reservas.map((reserva, index) => (
                 <div key={index} className="tarjeta-reserva">
                   <h3>📌 {reserva.tipo}</h3>
-                  <p>
-                    <strong>Nombre:</strong> {reserva.nombre}
-                  </p>
-                  <p>
-                    <strong>Correo:</strong> {reserva.correo}
-                  </p>
-                  <p>
-                    <strong>Fecha:</strong> {reserva.fecha}
-                  </p>
-                  <p>
-                    <strong>Personas:</strong> {reserva.personas}
-                  </p>
+                  <p><strong>Nombre:</strong> {reserva.nombre}</p>
+                  <p><strong>Correo:</strong> {reserva.correo}</p>
+                  <p><strong>Fecha:</strong> {reserva.fecha}</p>
+                  <p><strong>Personas:</strong> {reserva.personas}</p>
                 </div>
               ))
             )}

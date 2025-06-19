@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "../Componetes/Menus.jsx";
 import "../Eventos/cssEventos/TiendaFlores.css";
 
-// Importa tus imágenes
+// Imágenes
 import flor1 from "../imagenes/flores/f1.jpg";
 import flor2 from "../imagenes/flores/f2.jpg";
 import flor3 from "../imagenes/flores/f3.jpg";
@@ -103,6 +103,9 @@ export default function TiendaFlores() {
       <Menu />
       <section className="tienda">
         <h2 className="tienda-titulo">Tienda de Flores</h2>
+        <p className="tienda-subtitulo">
+          Arreglos florales para cada ocasión: románticos, elegantes y llenos de vida. ¡Sorprende con un detalle natural!
+        </p>
         <div className="productos-grid">
           {productos.map((producto) => (
             <div key={producto.id} className="producto-card">
@@ -111,10 +114,11 @@ export default function TiendaFlores() {
                 alt={producto.titulo}
                 className="producto-img"
               />
-              <h3>{producto.titulo}</h3>
+              <h3 className="producto-titulo">{producto.titulo}</h3>
               <p className="descripcion">{producto.descripcion}</p>
               <p className="precio">{producto.precio}</p>
-              <p className="calificacion">⭐ {producto.calificacion}</p>
+              <p className="calificacion">⭐ {producto.calificacion} / 5</p>
+              <button className="boton-comprar">Ver más</button>
             </div>
           ))}
         </div>

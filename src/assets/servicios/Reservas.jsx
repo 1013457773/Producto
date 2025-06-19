@@ -30,7 +30,6 @@ export default function Reservas() {
   };
 
   const fechasOcupadas = reservas.map((r) => r.fecha);
-
   const fechaFormateada = (fecha) =>
     new Date(fecha).toISOString().split("T")[0];
 
@@ -54,13 +53,8 @@ export default function Reservas() {
       return;
     }
 
-    const nuevaReserva = {
-      ...formulario,
-      fecha: fechaSeleccionadaISO,
-    };
-
     try {
-      await crearReserva(nuevaReserva);
+      await crearReserva({ ...formulario, fecha: fechaSeleccionadaISO });
       Swal.fire("✅ Reservado", "Tu reserva fue registrada", "success");
       setFormulario({
         nombre: "",
@@ -78,12 +72,6 @@ export default function Reservas() {
   return (
     <>
       <Menu />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <div className="reservas">
         <h1>📅 Gestión de Reservas</h1>
 
@@ -92,7 +80,7 @@ export default function Reservas() {
             <h2>Selecciona una fecha</h2>
             <Calendar onChange={cambiarFecha} value={fechaSeleccionada} />
             <p>
-              Fecha seleccionada: <strong>{fechaSeleccionadaISO}</strong>{" "}
+              Fecha seleccionada: <strong>{fechaSeleccionadaISO}</strong>
               {yaReservado && <span className="ocupado">⛔ Ocupada</span>}
             </p>
           </div>
@@ -155,18 +143,10 @@ export default function Reservas() {
             {reservas.map((reserva, index) => (
               <div key={index} className="tarjeta-reserva">
                 <h3>📌 {reserva.tipo}</h3>
-                <p>
-                  <strong>Nombre:</strong> {reserva.nombre}
-                </p>
-                <p>
-                  <strong>Correo:</strong> {reserva.correo}
-                </p>
-                <p>
-                  <strong>Fecha:</strong> {reserva.fecha}
-                </p>
-                <p>
-                  <strong>Personas:</strong> {reserva.personas}
-                </p>
+                <p><strong>Nombre:</strong> {reserva.nombre}</p>
+                <p><strong>Correo:</strong> {reserva.correo}</p>
+                <p><strong>Fecha:</strong> {reserva.fecha}</p>
+                <p><strong>Personas:</strong> {reserva.personas}</p>
               </div>
             ))}
           </div>

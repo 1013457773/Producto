@@ -53,7 +53,7 @@ export default function Encuesta() {
       <div className="encuesta-container">
         <h1>📝 Encuesta de Satisfacción</h1>
         <form className="formulario-encuesta" onSubmit={handleSubmit}>
-          <label>Nombre completo:</label>
+          <label>Nombre completo</label>
           <input
             type="text"
             name="nombre"
@@ -62,7 +62,7 @@ export default function Encuesta() {
             required
           />
 
-          <label>Correo electrónico:</label>
+          <label>Correo electrónico</label>
           <input
             type="email"
             name="correo"
@@ -118,21 +118,11 @@ export default function Encuesta() {
             ) : (
               feedbacks.map((f, index) => (
                 <div className="tarjeta-feedback" key={index}>
-                  <h3>{f.nombre}</h3>
-                  <p>
-                    <strong>Correo:</strong> {f.correo}
-                  </p>
-                  <p>
-                    <strong>Calificación:</strong> {f.calificacion}
-                  </p>
-                  <p>
-                    <strong>¿Recomienda?:</strong> {f.recomendar}
-                  </p>
-                  <p>
-                    <strong>Comentario:</strong>
-                    <br />
-                    {f.comentario}
-                  </p>
+                  <h3>🗣️ {f.nombre}</h3>
+                  <p><strong>📧 Correo:</strong> {f.correo}</p>
+                  <p><strong>⭐ Calificación:</strong> {f.calificacion}</p>
+                  <p><strong>👍 ¿Recomienda?:</strong> {f.recomendar}</p>
+                  <p><strong>💬 Comentario:</strong><br />{f.comentario}</p>
                 </div>
               ))
             )}

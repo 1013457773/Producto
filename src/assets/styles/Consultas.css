@@ -1,34 +1,36 @@
 .consultas {
-  padding: 2rem;
-  background-color: #f5f8fa;
-  min-height: 100vh;
+  padding: 10rem 2rem 4rem; /* espacio superior para evitar que el menú tape */
+  background: linear-gradient(to right, #fff0f5, #ffe6ea);
   font-family: "Segoe UI", sans-serif;
-  color: #2c3e50;
+  min-height: 100vh;
+  color: #3d1c2f;
   box-sizing: border-box;
 }
 
 .consultas h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   text-align: center;
-  margin-bottom: 2rem;
-  color: #34495e;
-  border-bottom: 4px solid #3498db;
+  margin-bottom: 2.5rem;
+  color: #a5123d;
+  border-bottom: 4px solid #f06292;
   padding-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .consultas h2 {
-  font-size: 1.5rem;
-  color: #2980b9;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #d81b60;
+  margin-bottom: 1.2rem;
   margin-top: 2.5rem;
+  font-weight: 600;
 }
 
 .consultas section {
   background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 14px;
+  padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.09);
   transition: transform 0.2s ease;
 }
 
@@ -51,11 +53,11 @@
 
 .tarjeta-reserva {
   background-color: #ffffff;
-  border-left: 6px solid #3498db;
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  width: 270px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #ec407a;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 
@@ -65,25 +67,26 @@
 
 .tarjeta-reserva h3 {
   margin-top: 0;
-  color: #2980b9;
-  font-size: 1.2rem;
+  color: #c2185b;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .tarjeta-reserva p {
-  margin: 0.3rem 0;
-  color: #2c3e50;
+  margin: 0.4rem 0;
+  color: #3d1c2f;
   font-size: 0.95rem;
 }
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
   .consultas h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .consultas h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .consultas {
@@ -91,11 +94,11 @@
   }
 
   .consultas section {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .tarjeta-reserva {
     width: 100%;
-    max-width: 350px;
+    max-width: 360px;
   }
 }
